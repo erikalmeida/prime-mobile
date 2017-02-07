@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/cvReclamos"
+    app:cardCornerRadius="7dp"
+    app:cardElevation="4dp"
+    android:background="@color/primary_light"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
+        android:fadingEdge="vertical"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="58dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Asunto:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:id="@+id/textViewAsunto"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="normal|bold"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/accent"
+                    android:textColor="@color/accent" />
+
+                <TextView
+                    android:text="Fecha:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:id="@+id/textViewFecha"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="normal|bold"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/accent"
+                    android:textColor="@color/accent" />
+
+                <TextView
+                    android:text="Tipo:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:id="@+id/textViewTipoSolicitud"
+                    android:textSize="13sp"
+                    android:gravity="end"
+                    android:textStyle="normal|bold"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/accent"
+                    android:textColor="@color/accent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:layout_width="200dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewAsuntoTexto"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="3dp"
+                    android:backgroundTint="@color/secondary_text"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:scrollHorizontally="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewFechaTexto"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="3dp"
+                    android:backgroundTint="@color/secondary_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewTipoTexto"
+                    android:layout_marginLeft="3dp"
+                    android:backgroundTint="@color/secondary_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp">
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_action_ver"
+                    android:id="@+id/imageButtonVerReclamo"
+                    android:visibility="visible"
+                    android:background="@null"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:text="Estatus de solicitud:"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:id="@+id/TextViewEstatusSolicitud"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textStyle="normal|bold"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="1dp"
+                android:backgroundTint="@color/accent"
+                android:textColor="@color/accent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_estatus_atendido"
+                android:id="@+id/imageViewEstatus"
+                android:layout_marginRight="10dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

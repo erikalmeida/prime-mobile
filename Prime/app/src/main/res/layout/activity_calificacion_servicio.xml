@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardView">
+
+                <TextView
+                    android:text="Por favor,danos tu calificacion sobre el servicio recibido, asi podremos mejorar continuamente             "
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewBuzon"
+                    android:layout_weight="1"
+                    android:layout_margin="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="5dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/servialdanalogo256"
+                    android:id="@+id/imageView"
+                    android:layout_weight="0.8"
+                    android:maxWidth="10dp"
+                    android:minHeight="73dp"
+                    android:maxHeight="10dp"
+                    android:layout_margin="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:text="Calificacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewCalificacion"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginTop="10dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="4"
+                    android:stepSize="1.0"
+                    android:rating="2.0"
+                    android:layout_marginTop="20dp" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editTextComentarioCalificacion"
+                    android:hint="Comentario"
+                    android:layout_marginTop="35dp" />
+
+                <Button
+                    android:text="Enviar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buttonEnviarCalificacion"
+                    android:background="@drawable/boton_tipo_uno"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/background_light"
+                    android:layout_marginTop="50dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
