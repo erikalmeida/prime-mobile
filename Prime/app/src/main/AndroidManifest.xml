@@ -31,6 +31,8 @@
         <activity android:name=".contactanos"></activity>
         <activity android:name=".PerfilUsuario"></activity>
         <activity android:name=".Fragment_lista_promociones"></activity>
+        <activity android:name=".HistorialCitas" android:exported="true"></activity>
+        <activity android:name=".DetalleHistorialCitas" android:exported="true"></activity>
         <activity
             android:name=".Quienes_somos"
             android:label="@string/title_activity_quienes_somos"
