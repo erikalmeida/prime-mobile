@@ -18,7 +18,9 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/cardView">
+                android:background="@color/cardView"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp">
 
                 <TextView
                     android:text="Por favor danos tu opinion y sugerencias, estas seran bien recibidas."
@@ -26,18 +28,18 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textViewBuzon"
                     android:layout_weight="1"
-                    android:layout_margin="18dp" />
+                    android:layout_margin="20dp"
+                    android:textAlignment="center" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/servialdanalogo256"
+                    app:srcCompat="@drawable/mailbox1"
                     android:id="@+id/imageView"
                     android:layout_weight="0.8"
                     android:maxWidth="10dp"
                     android:minHeight="73dp"
-                    android:maxHeight="10dp"
-                    android:layout_margin="20dp" />
+                    android:maxHeight="10dp" />
 
             </LinearLayout>
 
@@ -46,12 +48,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewNombre"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="left"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
-                android:layout_marginTop="10dp" />
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -59,18 +62,22 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/editTextNombre"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp" />
 
             <TextView
                 android:text="Apellido:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewApellido"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="left"
                 android:textSize="18sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -78,18 +85,22 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/editTextApellido"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp" />
 
             <TextView
                 android:text="Email:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewEmail"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="left"
                 android:textSize="18sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -97,18 +108,22 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/editTextEmail"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp" />
 
             <TextView
                 android:text="Sugerencia:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewSugerencia"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="left"
                 android:textSize="18sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -116,8 +131,9 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/editTextSugerencia"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="15dp" />
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -131,7 +147,9 @@
                     android:id="@+id/buttonEnviarSugerencia"
                     android:background="@drawable/boton_tipo_uno"
                     android:layout_gravity="center"
-                    android:textColor="@android:color/background_light" />
+                    android:textColor="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
             </LinearLayout>
 
         </LinearLayout>

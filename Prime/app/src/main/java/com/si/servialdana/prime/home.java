@@ -2,8 +2,6 @@ package com.si.servialdana.prime;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -42,17 +40,23 @@ public class home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        Button button = (Button) findViewById(R.id.button_promociones);
-        button.setOnClickListener(this);
+        Button btnPromos = (Button) findViewById(R.id.btnPromociones);
+        btnPromos.setOnClickListener(this);
+        Button btnServicio = (Button) findViewById(R.id.btnServicios);
+        btnServicio.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.button_promociones:
+            case R.id.btnPromociones:
                 Intent intent= new Intent(this,Fragment_lista_promociones.class);
                 startActivity(intent);
+                break;
+            case R.id.btnServicios:
+                Intent intent2= new Intent(this,CatalogoServicios.class);
+                startActivity(intent2);
                 break;
         }
     }
@@ -112,20 +116,11 @@ public class home extends AppCompatActivity
         } else if (id == R.id.nav_buzon_sugerencias) {
             Intent i = new Intent(this, BuzonSugerencias.class);
             startActivity(i);
-        } else if(id == R.id.nav_reclamos_generados){
-            Intent i = new Intent(this,Principal.class);
-            startActivity(i);
-
         } else if(id == R.id.nav_servicios_curso){
-
-            Intent i = new Intent(this,prueba.class);
-            startActivity(i);
 
         } else if(id == R.id.nav_perfil){
             Intent i = new Intent(this,PerfilUsuario.class);
             startActivity(i);
-        } else if(id == R.id.nav_citas){
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

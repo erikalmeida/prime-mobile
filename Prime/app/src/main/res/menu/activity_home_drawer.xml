@@ -3,17 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_citas"
-            android:icon="@drawable/ic_view_agenda_black_24px"
-            android:title="Citas" />
-        <item
             android:id="@+id/nav_notificaciones"
             android:icon="@drawable/ic_notifications_black_24px"
             android:title="Notificaciones" />
-        <item
-            android:id="@+id/nav_reclamos_generados"
-            android:icon="@drawable/ic_create_black_24dp"
-            android:title="Reclamos Generados"/>
         <item
             android:id="@+id/nav_servicios_curso"
             android:icon="@drawable/ic_chrome_reader_mode_black_24dp"

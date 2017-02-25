@@ -3,165 +3,192 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_8150bac07cc3bd59e06ec8752162850746a94178.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_0f20f2741b6ac1abe4c4aa961091fa949e87c0b1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_740c284404d949d56f380bfc491960159cf1834a.jar" />
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_70f69c7b83581df54b0a529e51d5c6eed523c48e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_4d96b4accd6b62aa3bc26d61be205656ac568ba6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_9e5396532147242d1c6dc43cde9cf8b46c652bb1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_4a30fb7b76a102a3cf59dc390630e2964f3d9d70.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_1df549cda1850b67f87309f892b1ac1edad5850c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_ce07c80fe073cbd20de6147cf5c994750ae2f0aa.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_b2e487eeb70663f420d5b5c2eeb40759b645d9a3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_4d3d69e6d9dd7f3004c2c2d5351955a75f1849ae.jar" />
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_0872512d310c1c7e782ab9232a41866e9dbbd99d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.2.1_acf53a7482b94136bca14ec33023efeec37e6b16.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_d8e628aa8c0d1c101896f8ed2da310b52a346f30.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_378db674affe47d2e410604c71e8f565ad26c006.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_1e0daa7c0d91839c83666f87dc67f11b00234985.jar" />
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_68b5b26e3b565bc0c7440902785ba5a1a80692cc.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_a58f27b9b38b5e008e6528a9f7ad9043fec8252b.jar" />
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_b0565706cea93368a0dba0c99d2b7c4670c517be.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_c3dc690b4a57275ad89b95f804f6e25be1c1dcc0.jar" />
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_0e109d6d90159ad21e654fc21dd112447ef95bde.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_68a09c2352945a3c79766c44ebfd1db5a3609da4.jar" />
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\glide-3.7.0_e70c0130ca3d5aed2377a445cc391096d4c84f07.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_b058fbd9c2e42387e897df1e8bde78407492babf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_65dc1033e7c4d758e8584e139e517cd29b70224a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.2.1_7fb9498f426d57904ee84cbffa1e57699d932c49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ccd0ed53df7f052fc809c79c2f544aebd7c5cf3d">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_99c7f5602adc0738e975a4d276bf980b94996678.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Adrian\AndroidStudioProjects\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_8f2930826d2409ea62eef1a20c12cba55ec5f3e0.jar" />
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_96c4a91464d4714be29bd2f2d398ac83b4a7bbe5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_b4b5accb27bac6c8991c773c4909777c9e4fd598.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_35802f9dfb680be9b9d09a04394fed7108465845.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_4c8fdda54345d1ccddedae848d3492bf94ecae0f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_cf6e5e74e68692fa744d2a8063e39313dc2b7429.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_c58744a3857a5d360b89fec963154e1abd38e403.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_ae52c32042444066ec50303a1e562d5a3a17ecc7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_d8f534d1074e1a6c2b44c7886a6e989df637fddf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b1b9babeea65ce21ef5a05b98478ee51242cd189">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run_8d5c1858b8f9e729f4a50cb8bfe9cc9d69d823bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_043010c59b21cef67482f9797bf394609ce33f9a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_502fd395f487f95bd6f17ced809015e0c016a14b.jar" />
     </item>
 
 </items>

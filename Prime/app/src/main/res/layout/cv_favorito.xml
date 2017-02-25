@@ -37,7 +37,7 @@
                     android:textStyle="normal|bold"
                     android:layout_gravity="end"
                     android:backgroundTint="@color/accent"
-                    android:textColor="@color/accent" />
+                    android:textColor="@color/primary_text" />
 
                 <TextView
                     android:text="Fecha:"
@@ -49,7 +49,7 @@
                     android:textStyle="normal|bold"
                     android:layout_gravity="end"
                     android:backgroundTint="@color/accent"
-                    android:textColor="@color/accent" />
+                    android:textColor="@color/secondary_text" />
 
                 <TextView
                     android:text="Tipo:"
@@ -61,7 +61,7 @@
                     android:textStyle="normal|bold"
                     android:layout_gravity="end"
                     android:backgroundTint="@color/accent"
-                    android:textColor="@color/accent" />
+                    android:textColor="@color/secondary_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -132,7 +132,7 @@
                 android:layout_marginLeft="60dp"
                 android:layout_marginRight="1dp"
                 android:backgroundTint="@color/accent"
-                android:textColor="@color/accent" />
+                android:textColor="@android:color/tertiary_text_dark" />
 
             <ImageView
                 android:layout_width="wrap_content"

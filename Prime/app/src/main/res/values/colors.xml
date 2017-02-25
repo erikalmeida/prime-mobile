@@ -10,4 +10,5 @@
     <color name="icons">#ffffff</color>
     <color name="divider">#BDBDBD</color>
     <color name="cardView">#292194f9</color>
+    <color name="viewBg">#f1f5f8</color>
 </resources>

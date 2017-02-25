@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:id="@+id/cvPromocion"
     app:cardCornerRadius="7dp"
-    app:cardElevation="4dp"
+    app:cardElevation="1dp"
     android:background="@color/primary_light"
     android:layout_height="wrap_content">
 
