@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.si.servialdana.prime.adaptador.RecyclerViewAdapterNotificaciones;
-import com.si.servialdana.prime.adaptador.RecyclerViewAdapterReclamos;
+
 import java.util.ArrayList;
 import java.util.List;
 

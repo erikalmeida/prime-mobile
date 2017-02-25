@@ -3,9 +3,10 @@
 
     <item android:state_enabled="false">
         <shape>
-            <solid android:color="#BFBFBF" />
+            <solid android:color="@color/accent"/>
 
             <corners android:radius="5dp" />
+
 
             <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
         </shape>
@@ -25,7 +26,7 @@
 
     <item android:state_focused="true">
         <shape>
-            <solid android:color="@color/primary" />
+            <solid android:color="@color/accent" />
 
             <corners android:radius="5dp" />
 
@@ -36,7 +37,7 @@
 
     <item>
         <shape>
-            <solid android:color="@color/primary" />
+            <solid android:color="@color/accent" />
 
             <corners android:radius="5dp" />
 
