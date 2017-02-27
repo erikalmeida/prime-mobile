@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.R;
+import com.si.servialdana.prime.modelo.Servicio;
 import com.si.servialdana.prime.modelo.servicio;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyView
     }
 
 
-    public ServicioAdapter(Context mContext, List<servicio> servicioList) {
+    public ServicioAdapter(Context mContext, List<Servicio> servicioList) {
         this.mContext = mContext;
         this.servicioList = servicioList;
     }

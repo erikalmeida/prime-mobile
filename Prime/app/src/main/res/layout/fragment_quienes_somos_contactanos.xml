@@ -174,38 +174,79 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_rs_facebook"
-            android:id="@+id/imageView6"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="62dp"
+                app:srcCompat="@drawable/ic_rs_facebook"
+                android:id="@+id/imageView6"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="30dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
+            <TextView
+                android:text="www.facebook.com/servialdana's"
+                android:layout_height="30dp"
+                android:id="@+id/textView35"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingTop="5dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_rs_twitter"
-            android:id="@+id/imageView7"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_rs_twitter"
+                android:id="@+id/imageView7"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.04" />
+
+            <TextView
+                android:text="wwww.twitter.com/servialdana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView36"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_rs_instagram_new"
-            android:id="@+id/imageView8"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_rs_instagram_new"
+                android:id="@+id/imageView8"
+                android:layout_weight="0.00"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:text="www.instagram.com/servialdana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView37"
+                android:layout_weight="0.04" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

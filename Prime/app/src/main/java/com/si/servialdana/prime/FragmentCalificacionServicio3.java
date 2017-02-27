@@ -1,23 +1,20 @@
 package com.si.servialdana.prime;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 /**
- * Created by ealmeida on 1/29/2017.
+ * Created by ealmeida on 2/26/2017.
  */
 
-public class Fragment_quienes_somos_mision extends Fragment {
-
+public class FragmentCalificacionServicio3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_quienes_somos_mision, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_calificacion_servicio_3, container, false);
         return rootView;
     }
 }

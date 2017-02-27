@@ -17,7 +17,7 @@ import android.util.TypedValue;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.adaptador.PromocionAdapter;
-import com.si.servialdana.prime.modelo.promocion;
+import com.si.servialdana.prime.modelo.Promocion;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class CatalogoPromociones extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private PromocionAdapter adapter;
-    private List<promocion> promocionList;
+    private List<Promocion> promocionList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,34 +116,34 @@ public class CatalogoPromociones extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        promocion a = new promocion("True Romance", covers[0]);
+        Promocion a = new Promocion("True Romance", covers[0]);
         promocionList.add(a);
 
-        a = new promocion("Xscpae", covers[1]);
+        a = new Promocion("Xscpae", covers[1]);
         promocionList.add(a);
 
-        a = new promocion("Maroon 5", covers[2]);
+        a = new Promocion("Maroon 5", covers[2]);
         promocionList.add(a);
 
-        a = new promocion("Born to Die", covers[3]);
+        a = new Promocion("Born to Die", covers[3]);
         promocionList.add(a);
 
-        a = new promocion("Honeymoon", covers[4]);
+        a = new Promocion("Honeymoon", covers[4]);
         promocionList.add(a);
 
-        a = new promocion("I Need a Doctor", covers[5]);
+        a = new Promocion("I Need a Doctor", covers[5]);
         promocionList.add(a);
 
-        a = new promocion("Loud", covers[6]);
+        a = new Promocion("Loud", covers[6]);
         promocionList.add(a);
 
-        a = new promocion("Legend", covers[7]);
+        a = new Promocion("Legend", covers[7]);
         promocionList.add(a);
 
-        a = new promocion("Hello", covers[8]);
+        a = new Promocion("Hello", covers[8]);
         promocionList.add(a);
 
-        a = new promocion("Greatest Hits", covers[9]);
+        a = new Promocion("Greatest Hits", covers[9]);
         promocionList.add(a);
 
         adapter.notifyDataSetChanged();

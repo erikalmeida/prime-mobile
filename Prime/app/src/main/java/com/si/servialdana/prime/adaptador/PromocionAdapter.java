@@ -4,20 +4,16 @@ package com.si.servialdana.prime.adaptador;
  * Created by ealmeida on 2/25/2017.
  */
 import android.content.Context;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.R;
-import com.si.servialdana.prime.modelo.promocion;
+import com.si.servialdana.prime.modelo.Promocion;
 
 import java.util.List;
 
@@ -27,7 +23,7 @@ import java.util.List;
 public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<promocion> promocionList;
+    private List<Promocion> promocionList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -41,7 +37,7 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
     }
 
 
-    public PromocionAdapter(Context mContext, List<promocion> promocionList) {
+    public PromocionAdapter(Context mContext, List<Promocion> promocionList) {
         this.mContext = mContext;
         this.promocionList = promocionList;
     }
@@ -56,7 +52,7 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        promocion promocion = promocionList.get(position);
+        Promocion promocion = promocionList.get(position);
         holder.title.setText(promocion.getName());
 
 

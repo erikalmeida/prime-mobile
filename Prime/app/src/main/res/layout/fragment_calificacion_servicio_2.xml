@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.si.servialdana.prime.CalificacionServicio">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardView">
+
+                <TextView
+                    android:text="Tu opinion es importante para nosotros, cuando nos calificas, contribuyes con que mejoremos continuamente"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewBuzon"
+                    android:layout_weight="1"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/review1"
+                    android:id="@+id/imageView"
+                    android:layout_weight="0.8"
+                    android:maxWidth="10dp"
+                    android:minHeight="73dp"
+                    android:maxHeight="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:text="@string/section_question_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewCalificacion"
+                    android:textSize="24sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/secondary_text"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="1"
+                    android:rating="2.0"
+                    android:layout_marginTop="20dp"
+                    style="@style/Widget.AppCompat.RatingBar"
+                    android:isIndicator="false"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginBottom="20dp" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editTextComentarioCalificacion"
+                    android:hint="Comentario"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    app:srcCompat="@drawable/ic_swap_horiz_black_24px"
+                    android:id="@+id/imageView11"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
