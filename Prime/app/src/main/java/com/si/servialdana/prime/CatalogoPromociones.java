@@ -17,7 +17,7 @@ import android.util.TypedValue;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.adaptador.PromocionAdapter;
-import com.si.servialdana.prime.modelo.promocion;
+import com.si.servialdana.prime.sql.modelo.promocion;
 import java.util.ArrayList;
 import java.util.List;
 

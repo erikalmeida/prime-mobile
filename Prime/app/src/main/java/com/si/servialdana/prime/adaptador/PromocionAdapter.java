@@ -4,20 +4,16 @@ package com.si.servialdana.prime.adaptador;
  * Created by ealmeida on 2/25/2017.
  */
 import android.content.Context;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.R;
-import com.si.servialdana.prime.modelo.promocion;
+import com.si.servialdana.prime.sql.modelo.promocion;
 
 import java.util.List;
 
