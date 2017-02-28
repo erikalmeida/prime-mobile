@@ -76,18 +76,6 @@
                     android:layout_marginBottom="20dp" />
 
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/editTextComentarioCalificacion"
-                    android:hint="Comentario"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp" />
-
                 <ImageView
                     android:layout_width="match_parent"
                     app:srcCompat="@drawable/ic_swap_horiz_black_24px"
