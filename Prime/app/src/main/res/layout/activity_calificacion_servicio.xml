@@ -1,105 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.si.servialdana.prime.CalificacionServicio">
 
-
-    <ScrollView
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/cardView">
+        </android.support.v7.widget.Toolbar>
 
-                <TextView
-                    android:text="Por favor,danos tu calificacion sobre el servicio recibido, asi podremos mejorar continuamente             "
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textViewBuzon"
-                    android:layout_weight="1"
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent" />
+    </android.support.design.widget.AppBarLayout>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/review1"
-                    android:id="@+id/imageView"
-                    android:layout_weight="0.8"
-                    android:maxWidth="10dp"
-                    android:minHeight="73dp"
-                    android:maxHeight="10dp" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-            </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
-
-                <TextView
-                    android:text="Calificacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textViewCalificacion"
-                    android:textSize="18sp"
-                    android:textStyle="normal|bold"
-                    android:textColor="@color/secondary_text"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:layout_width="244dp"
-                    android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:stepSize="1"
-                    android:rating="2.0"
-                    android:layout_marginTop="20dp"
-                    style="@style/Widget.AppCompat.RatingBar"
-                    android:isIndicator="false"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginBottom="20dp" />
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/editTextComentarioCalificacion"
-                    android:hint="Comentario"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp" />
-
-                <Button
-                    android:text="Enviar"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/buttonEnviarCalificacion"
-                    android:background="@drawable/boton_tipo_uno"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:layout_marginTop="50dp" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
