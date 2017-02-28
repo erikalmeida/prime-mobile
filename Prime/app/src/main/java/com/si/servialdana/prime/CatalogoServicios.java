@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.si.servialdana.prime.modelo.Servicio;
+import com.si.servialdana.prime.sql.modelo.servicio;
 import com.si.servialdana.prime.adaptador.ServicioAdapter;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class CatalogoServicios extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ServicioAdapter adapter;
-    private List<Servicio> servicioList;
+    private List<servicio> servicioList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class CatalogoServicios extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         servicioList = new ArrayList<>();
-        adapter = new ServicioAdapter(this,servicioList);
+        adapter = new ServicioAdapter(this, servicioList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -109,34 +109,34 @@ public class CatalogoServicios extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        Servicio a = new Servicio("Cambio de Aceite", covers[0]);
+        servicio a = new servicio("Cambio de Aceite", covers[0]);
         servicioList.add(a);
 
-        a = new Servicio("Correa del Tiempo", covers[1]);
+        a = new servicio("Correa del Tiempo", covers[1]);
         servicioList.add(a);
 
-        a = new Servicio("Mantenimiento", covers[2]);
+        a = new servicio("Mantenimiento", covers[2]);
         servicioList.add(a);
 
-        a = new Servicio("Polea", covers[3]);
+        a = new servicio("Polea", covers[3]);
         servicioList.add(a);
 
-        a = new Servicio("servicio 1", covers[4]);
+        a = new servicio("servicio 1", covers[4]);
         servicioList.add(a);
 
-        a = new Servicio("servicio 2", covers[5]);
+        a = new servicio("servicio 2", covers[5]);
         servicioList.add(a);
 
-        a = new Servicio("servicio 3", covers[6]);
+        a = new servicio("servicio 3", covers[6]);
         servicioList.add(a);
 
-        a = new Servicio("servicio 4", covers[7]);
+        a = new servicio("servicio 4", covers[7]);
         servicioList.add(a);
 
-        a = new Servicio("servicio 5", covers[8]);
+        a = new servicio("servicio 5", covers[8]);
         servicioList.add(a);
 
-        a = new Servicio("servicio 6", covers[9]);
+        a = new servicio("servicio 6", covers[9]);
         servicioList.add(a);
 
         adapter.notifyDataSetChanged();

@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.R;
-import com.si.servialdana.prime.modelo.Promocion;
+import com.si.servialdana.prime.sql.modelo.promocion;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ import java.util.List;
 public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Promocion> promocionList;
+    private List<promocion> promocionList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -37,7 +37,7 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
     }
 
 
-    public PromocionAdapter(Context mContext, List<Promocion> promocionList) {
+    public PromocionAdapter(Context mContext, List<promocion> promocionList) {
         this.mContext = mContext;
         this.promocionList = promocionList;
     }
@@ -52,7 +52,7 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Promocion promocion = promocionList.get(position);
+        promocion promocion = promocionList.get(position);
         holder.title.setText(promocion.getName());
 
 
