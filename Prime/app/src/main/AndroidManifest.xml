@@ -11,7 +11,13 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_inicio_sesion"
-            android:parentActivityName=".home" />
+            android:parentActivityName=".home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".CalificacionServicio"
             android:label="@string/title_activity_calificacion" />
@@ -67,11 +73,6 @@
             android:label="Notificaciones"
             android:exported="true"></activity>
         <activity android:name=".SistemaServicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
