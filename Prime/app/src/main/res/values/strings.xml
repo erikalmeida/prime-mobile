@@ -15,16 +15,32 @@
     <string name="title_activity_detalle_servicio">Servicio</string>
     <string name="title_activity_detalle_promocion">Promocion</string>
     <string name="title_activity_detalle_notificacion">Notificaciones</string>
+    <string name="title_activity_detalle_presupuesto">Notificacion Presupuesto</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
-
-    <string name="action_add_favourite">Agregar a Favoritos</string>
-    <string name="action_play_next">Ver Siguiente</string>
     <string name="backdrop_title">ServiAldana</string>
     <string name="backdrop_subtitle">Servicios que ofrecemos</string>
     <string name="title_activity_catalogo_promociones">CatalogoPromociones</string>
+    <string name="title_activity_calificacion_servicio">CalificacionServicio</string>
+
+    <string name="Tipo_prompt">Escoge un tipo de comentario</string>
+    <string-array name="tipo_comentario_array">
+        <item>Queja</item>
+        <item>Sugerencia</item>
+        <item>Felicitaciones</item>
+    </string-array>
+    <string name="Motivo_prompt">Escoge un motivo</string>
+    <string-array name="referencia_array">
+        <item>Instalaciones</item>
+        <item>Servicio</item>
+        <item>Atencion</item>
+    </string-array>
+
+    <string name="section_question_1">Califica Nuestro Servicio</string>
+    <string name="section_question_2">Califica Nuestras Instalaciones</string>
+    <string name="section_question_3">Califica Nuestra Atencion al Cliente</string>
+    <string name="title_activity_ubicanos">Map</string>
 </resources>

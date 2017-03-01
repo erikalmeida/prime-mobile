@@ -12,13 +12,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
-import android.widget.TextView;
 
 public class Quienes_somos extends AppCompatActivity {
 
@@ -115,10 +111,10 @@ public class Quienes_somos extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    Fragment_quienes_somos_mision tab1 = new Fragment_quienes_somos_mision();
+                    Fragment_quienes_somos_contactanos tab1 = new Fragment_quienes_somos_contactanos();
                     return tab1;
                 case 1:
-                    Fragment_quienes_somos_vision tab2 = new Fragment_quienes_somos_vision();
+                    Fragment_quienes_somos_ubicanos tab2 = new Fragment_quienes_somos_ubicanos();
                     return tab2;
             }
             return null;
@@ -134,9 +130,9 @@ public class Quienes_somos extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Mision";
+                    return "Contactanos";
                 case 1:
-                    return "Vision";
+                    return "Ubicanos";
             }
             return null;
         }

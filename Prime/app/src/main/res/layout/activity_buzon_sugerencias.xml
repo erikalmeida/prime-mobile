@@ -44,10 +44,10 @@
             </LinearLayout>
 
             <TextView
-                android:text="Nombre:"
+                android:text="¿Que deseas enviar?:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewNombre"
+                android:id="@+id/textViewTipo"
                 android:layout_gravity="left"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -56,21 +56,20 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp" />
 
-            <EditText
+            <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editTextNombre"
-                android:layout_marginRight="20dp"
+                android:id="@+id/spinnerTipo"
+                android:layout_height="35dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
-                android:textSize="14sp" />
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp" />
 
             <TextView
-                android:text="Apellido:"
+                android:text="¿Sobre que es tu comentario?:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewApellido"
+                android:id="@+id/textViewMotivo"
                 android:layout_gravity="left"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -79,21 +78,20 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp" />
 
-            <EditText
+            <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editTextApellido"
-                android:layout_marginRight="20dp"
+                android:layout_height="35dp"
+                android:id="@+id/spinnerMotivo"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
-                android:textSize="14sp" />
+                android:layout_marginRight="20dp" />
 
             <TextView
-                android:text="Email:"
+                android:text="Comentario:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewEmail"
+                android:id="@+id/textViewComentario"
                 android:layout_gravity="left"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -107,30 +105,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/editTextEmail"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="14sp" />
-
-            <TextView
-                android:text="Sugerencia:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewSugerencia"
-                android:layout_gravity="left"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editTextSugerencia"
+                android:id="@+id/editTextComentario"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:textSize="14sp" />
