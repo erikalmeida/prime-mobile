@@ -8,6 +8,6 @@ public class contactanos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactanos);
+        setContentView(R.layout.fragment_quienes_somos_contactanos);
     }
 }

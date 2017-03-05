@@ -1,19 +1,35 @@
 package com.si.servialdana.prime.sql.modelo;
 
-/**
- * Created by ealmeida on 2/25/2017.
- */
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "tb_promocion")
 public class promocion {
+
+    @DatabaseField(id = true)
+    private int id;
+
+    @DatabaseField
     private String name;
+
+    @DatabaseField
     private int thumbnail;
 
     public promocion() {
     }
 
-    public promocion(String name, int thumbnail) {
+    public promocion(int id, String name, int thumbnail) {
+        this.id = id;
         this.name = name;
         this.thumbnail = thumbnail;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

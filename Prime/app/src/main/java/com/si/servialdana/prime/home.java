@@ -51,7 +51,7 @@ public class home extends AppCompatActivity
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnPromociones:
-                Intent intent= new Intent(this,Fragment_lista_promociones.class);
+                Intent intent= new Intent(this,CatalogoPromociones.class);
                 startActivity(intent);
                 break;
             case R.id.btnServicios:
@@ -106,18 +106,13 @@ public class home extends AppCompatActivity
             Intent i = new Intent(this, Notificaciones.class);
             startActivity(i);
 
-        } else if (id == R.id.nav_quienes_somos) {
-            Intent i = new Intent(this,Quienes_somos.class);
+        } else if (id == R.id.nav_contacto) {
+            Intent i = new Intent(this,contactanos.class);
             startActivity(i);
 
-        } else if (id == R.id.nav_contacto) {
-            Intent i = new Intent(this, contactanos.class);
-            startActivity(i);
         } else if (id == R.id.nav_buzon_sugerencias) {
             Intent i = new Intent(this, BuzonSugerencias.class);
             startActivity(i);
-        } else if(id == R.id.nav_servicios_curso){
-
         } else if(id == R.id.nav_perfil){
             Intent i = new Intent(this,PerfilUsuario.class);
             startActivity(i);

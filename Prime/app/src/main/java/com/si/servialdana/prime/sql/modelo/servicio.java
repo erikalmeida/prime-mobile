@@ -1,22 +1,35 @@
 package com.si.servialdana.prime.sql.modelo;
 
-/**
- * Created by ealmeida on 2/14/2017.
- */
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "tb_servicio")
 public class servicio {
 
+    @DatabaseField(id = true)
+    private int id;
+
+    @DatabaseField
     private String name;
-    private int numOfSongs;
+
+    @DatabaseField
     private int thumbnail;
 
     public servicio() {
     }
 
-    public servicio(String name, int thumbnail) {
+    public servicio(int id, String name, int thumbnail) {
+        this.id = id;
         this.name = name;
-        this.numOfSongs = numOfSongs;
         this.thumbnail = thumbnail;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -27,10 +40,6 @@ public class servicio {
         this.name = name;
     }
 
-
-    public void setNumOfSongs(int numOfSongs) {
-        this.numOfSongs = numOfSongs;
-    }
 
     public int getThumbnail() {
         return thumbnail;
