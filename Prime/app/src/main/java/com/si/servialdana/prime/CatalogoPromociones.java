@@ -18,14 +18,41 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.adaptador.PromocionAdapter;
 import com.si.servialdana.prime.sql.modelo.promocion;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import android.util.Log;
+import android.os.AsyncTask;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.si.servialdana.prime.sql.conexion.DBHelper;
+
+import android.content.Context;
 
 public class CatalogoPromociones extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private PromocionAdapter adapter;
     private List<promocion> promocionList;
+
+    private DBHelper dbHelper;
+    private RuntimeExceptionDao<promocion, Integer> dao_promociones=null;
+
+    public void setPromocionList(List<promocion> promocionList){
+        this.promocionList = promocionList;
+    }
+
+    public List<promocion> getPromocionList(){
+        return this.promocionList;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +74,7 @@ public class CatalogoPromociones extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
+        //Promociones que vienen de la BD.
         prepareAlbums();
 
         try {
@@ -54,6 +82,12 @@ public class CatalogoPromociones extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //new ServicioPromociones().execute();
     }
 
     @Override
@@ -116,37 +150,52 @@ public class CatalogoPromociones extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        promocion a = new promocion("True Romance", covers[0]);
+        promocion a = new promocion(1,"True Romance", covers[0]);
         promocionList.add(a);
 
-        a = new promocion("Xscpae", covers[1]);
+        a = new promocion(2,"Xscpae", covers[1]);
         promocionList.add(a);
 
-        a = new promocion("Maroon 5", covers[2]);
+        a = new promocion(3,"Maroon 5", covers[2]);
         promocionList.add(a);
 
-        a = new promocion("Born to Die", covers[3]);
+        a = new promocion(4,"Born to Die", covers[3]);
         promocionList.add(a);
 
-        a = new promocion("Honeymoon", covers[4]);
+        a = new promocion(5,"Honeymoon", covers[4]);
         promocionList.add(a);
 
-        a = new promocion("I Need a Doctor", covers[5]);
+        a = new promocion(6,"I Need a Doctor", covers[5]);
         promocionList.add(a);
 
-        a = new promocion("Loud", covers[6]);
+        a = new promocion(7,"Loud", covers[6]);
         promocionList.add(a);
 
-        a = new promocion("Legend", covers[7]);
+        a = new promocion(8,"Legend", covers[7]);
         promocionList.add(a);
 
-        a = new promocion("Hello", covers[8]);
+        a = new promocion(9,"Hello", covers[8]);
         promocionList.add(a);
 
-        a = new promocion("Greatest Hits", covers[9]);
+        a = new promocion(10,"Greatest Hits", covers[9]);
         promocionList.add(a);
 
         adapter.notifyDataSetChanged();
+    }
+
+    public void guardarPromociones(Context mcontext){
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
+        this.dao_promociones= dbHelper.getRuntimeExceptionPromocionDao();
+        promocion promocion;
+        promocion = this.getPromocionList().get(1);
+        dao_promociones.create(promocion);
+    }
+
+    public List<promocion> consultarPromociones(){
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
+        this.dao_promociones= dbHelper.getRuntimeExceptionPromocionDao();
+        this.promocionList= dao_promociones.queryForAll();
+        return this.promocionList;
     }
 
     /**
@@ -197,5 +246,35 @@ public class CatalogoPromociones extends AppCompatActivity {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    private class ServicioPromociones extends AsyncTask<Void, Void, promocion[]> {
+        @Override
+        protected promocion[] doInBackground(Void... params) {
+            try {
+                final String url = ""; //"https://bitpay.com/api/rates"
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                ResponseEntity<promocion[]> responseEntity = restTemplate.getForEntity(url, promocion[].class);
+                promocion[] promociones = responseEntity.getBody();
+                /*MediaType contentType = responseEntity.getHeaders().getContentType();
+                HttpStatus statusCode = responseEntity.getStatusCode();*/
+                return promociones;
+            } catch (Exception e) {
+                Log.e("ServicioPromocion", e.getMessage(), e);
+            }
+
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(promocion[] promociones) {
+            List<promocion> listaPromocion = Arrays.asList(promociones);
+            CatalogoPromociones cp = new CatalogoPromociones();
+            cp.setPromocionList(listaPromocion);
+            cp.guardarPromociones(getApplicationContext());
+        }
+
     }
 }

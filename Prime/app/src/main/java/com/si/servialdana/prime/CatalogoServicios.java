@@ -21,13 +21,39 @@ import com.si.servialdana.prime.sql.modelo.servicio;
 import com.si.servialdana.prime.adaptador.ServicioAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import android.util.Log;
+import android.os.AsyncTask;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.si.servialdana.prime.sql.conexion.DBHelper;
+
+import android.content.Context;
 
 public class CatalogoServicios extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ServicioAdapter adapter;
     private List<servicio> servicioList;
+
+    private DBHelper dbHelper;
+    private RuntimeExceptionDao<servicio, Integer> dao_servicios=null;
+
+    public List<servicio> getServicioList() {
+        return servicioList;
+    }
+
+    public void setServicioList(List<servicio> servicioList) {
+        this.servicioList = servicioList;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +84,12 @@ public class CatalogoServicios extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+     @Override
+    protected void onStart() {
+        super.onStart();
+        //new ServicioCatalogo().execute();
     }
 
     /**
@@ -109,37 +141,52 @@ public class CatalogoServicios extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        servicio a = new servicio("Cambio de Aceite", covers[0]);
+        servicio a = new servicio(1,"Cambio de Aceite", covers[0]);
         servicioList.add(a);
 
-        a = new servicio("Correa del Tiempo", covers[1]);
+        a = new servicio(2,"Correa del Tiempo", covers[1]);
         servicioList.add(a);
 
-        a = new servicio("Mantenimiento", covers[2]);
+        a = new servicio(3,"Mantenimiento", covers[2]);
         servicioList.add(a);
 
-        a = new servicio("Polea", covers[3]);
+        a = new servicio(4,"Polea", covers[3]);
         servicioList.add(a);
 
-        a = new servicio("servicio 1", covers[4]);
+        a = new servicio(5,"servicio 1", covers[4]);
         servicioList.add(a);
 
-        a = new servicio("servicio 2", covers[5]);
+        a = new servicio(6,"servicio 2", covers[5]);
         servicioList.add(a);
 
-        a = new servicio("servicio 3", covers[6]);
+        a = new servicio(7,"servicio 3", covers[6]);
         servicioList.add(a);
 
-        a = new servicio("servicio 4", covers[7]);
+        a = new servicio(8,"servicio 4", covers[7]);
         servicioList.add(a);
 
-        a = new servicio("servicio 5", covers[8]);
+        a = new servicio(9,"servicio 5", covers[8]);
         servicioList.add(a);
 
-        a = new servicio("servicio 6", covers[9]);
+        a = new servicio(10,"servicio 6", covers[9]);
         servicioList.add(a);
 
         adapter.notifyDataSetChanged();
+    }
+
+    public void guardarServicios(Context mcontext){
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
+        this.dao_servicios= dbHelper.getRuntimeExceptionServicioDao();
+        servicio servi;
+        servi = this.getServicioList().get(1);
+        dao_servicios.create(servi);
+    }
+
+    public List<servicio> consultarPromociones(){
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
+        this.dao_servicios= dbHelper.getRuntimeExceptionServicioDao();
+        this.servicioList= dao_servicios.queryForAll();
+        return this.servicioList;
     }
 
     @Override
@@ -197,6 +244,36 @@ public class CatalogoServicios extends AppCompatActivity {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    private class ServicioCatalogo extends AsyncTask<Void, Void, servicio[]> {
+        @Override
+        protected servicio[] doInBackground(Void... params) {
+            try {
+                final String url = ""; //"https://bitpay.com/api/rates"
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                ResponseEntity<servicio[]> responseEntity = restTemplate.getForEntity(url, servicio[].class);
+                servicio[] servicios = responseEntity.getBody();
+                /*MediaType contentType = responseEntity.getHeaders().getContentType();
+                HttpStatus statusCode = responseEntity.getStatusCode();*/
+                return servicios;
+            } catch (Exception e) {
+                Log.e("ServicioPromocion", e.getMessage(), e);
+            }
+
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(servicio[] servicios) {
+            List<servicio> listaServicios = Arrays.asList(servicios);
+            CatalogoServicios cp = new CatalogoServicios();
+            cp.setServicioList(listaServicios);
+            cp.guardarServicios(getApplicationContext());
+        }
+
     }
 }
 

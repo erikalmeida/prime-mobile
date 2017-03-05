@@ -3,7 +3,7 @@ package com.si.servialdana.prime.sql.modelo;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "usuario")
+@DatabaseTable(tableName = "tb_usuario")
 public class Usuario {
 
     @DatabaseField(id = true)
@@ -19,6 +19,10 @@ public class Usuario {
     private Grupo rol;
 
     public Usuario() {
+    }
+
+    public Usuario(String usuario, String contrasenna){
+
     }
 
     public Long getId() {

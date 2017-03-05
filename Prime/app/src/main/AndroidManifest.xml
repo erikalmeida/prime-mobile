@@ -11,22 +11,36 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_inicio_sesion"
-            android:parentActivityName=".home" />
+            android:parentActivityName=".home">
+
+        </activity>
         <activity
             android:name=".CalificacionServicio"
-            android:label="@string/title_activity_calificacion" />
+            android:label="@string/title_activity_calificacion"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".Notificaciones"
-            android:label="@string/title_activity_notificaciones" />
+            android:label="@string/title_activity_notificaciones"
+            android:parentActivityName=".home"/>
         <activity
             android:name=".home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".Principal" />
         <activity
             android:name=".BuzonSugerencias"
             android:label="@string/title_activity_buzon_sugerencias"
-            android:parentActivityName=".home" />
+            android:parentActivityName=".home"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".contactanos"
             android:label="@string/title_activity_contacto"
@@ -36,9 +50,10 @@
             android:label="@string/title_activity_perfil"
             android:parentActivityName=".home" />
         <activity
-            android:name=".Fragment_lista_promociones"
+            android:name=".CatalogoPromociones"
             android:label="@string/title_activity_promociones"
-            android:parentActivityName=".home" />
+            android:parentActivityName=".home"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Quienes_somos"
             android:label="@string/title_activity_quienes_somos"
@@ -52,26 +67,21 @@
         <activity
             android:name=".DetalleServicio"
             android:label="@string/title_activity_detalle_servicio"
-            android:parentActivityName=".CatalogoServicios"></activity>
+            android:parentActivityName=".CatalogoServicios">
+
+        </activity>
         <activity
             android:name=".DetallePromocion"
             android:label="@string/title_activity_detalle_promocion"
-            android:parentActivityName=".CatalogoPromociones" />
-        <activity
-            android:name=".CatalogoPromociones"
-            android:label="@string/title_activity_catalogo_promociones"
-            android:parentActivityName=".home"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".CatalogoPromociones" >
+
         </activity>
         <activity android:name=".DetalleNotificacion"
             android:label="Notificaciones"
-            android:exported="true"></activity>
-        <activity android:name=".SistemaServicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name=".SistemaServicio">
         </activity>
     </application>
 

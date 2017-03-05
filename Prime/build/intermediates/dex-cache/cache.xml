@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="06d4a0af8f267d533a8441f57b62d52b0d083a95">
+        sha1="2d83b54ed58e53975e8ae2b19d0c75307c4ee178">
         <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run_7ca0106edd6a266c74dbb739be22309b21480bdc.jar" />
     </item>
     <item
@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="34149267e6fb87297bc99746f7d52ad7c978e7ab">
+        sha1="d3815c9d491768eb00224618bdaabdf59101c834">
         <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_65e630197b414999affee50eacf20c435036250b.jar" />
     </item>
     <item
