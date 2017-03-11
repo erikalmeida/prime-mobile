@@ -22,14 +22,14 @@ public class SistemaServicio extends AppCompatActivity {
 
     private Sistema sistema;
     private DBHelper dbHelper;
-    private RuntimeExceptionDao<Sistema, String> dao_sistema=null;
+    private RuntimeExceptionDao<Sistema, Integer> dao_sistema=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sistema);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        this.guardarSistema();
+        //this.guardarSistema();
     }
 
     @Override
@@ -52,14 +52,14 @@ public class SistemaServicio extends AppCompatActivity {
     public void guardarSistema(){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
         dao_sistema= dbHelper.getRuntimeExceptionSistemaDao();
-        dao_sistema.create(new Sistema("1123","contenido"));
+        dao_sistema.create(new Sistema());
     }
 
     private class HttpRequestTask extends AsyncTask<Void, Void, Sistema> {
         @Override
         protected Sistema doInBackground(Void... params) {
             try {
-                final String url = "http://rest-service.guides.spring.io/greeting";
+                final String url = "http://192.168.1.107:8080/servicios_crm/ServicioMovilPrime?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Sistema sistema = restTemplate.getForObject(url, Sistema.class);
@@ -76,8 +76,8 @@ public class SistemaServicio extends AppCompatActivity {
         protected void onPostExecute(Sistema sistema) {
             TextView IdText = (TextView) findViewById(R.id.id_value);
             TextView ContentText = (TextView) findViewById(R.id.content_value);
-            IdText.setText(sistema.getId());
-            ContentText.setText(sistema.getContent());
+            IdText.setText(Integer.toString(sistema.getId()));
+            //ContentText.setText(sistema.getContent());
         }
 
     }

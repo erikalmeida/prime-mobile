@@ -26,7 +26,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     //Aqui van los atributos relacionados a las tablas de base de datos que se desean gestionar
     private RuntimeExceptionDao<Grupo,Integer> rolIntegerDao;
     private RuntimeExceptionDao<Usuario, Integer> usuarioIntegerDao;
-    private RuntimeExceptionDao<Sistema, String> sistemaStringDao = null;
+    private RuntimeExceptionDao<Sistema, Integer> sistemaIntegerDao = null;
     private RuntimeExceptionDao<promocion, Integer> promocionIntegerDao = null;
     private RuntimeExceptionDao<servicio, Integer> servicioIntegerDao=null;
 
@@ -68,11 +68,11 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     }
 
 
-    public RuntimeExceptionDao<Sistema, String> getRuntimeExceptionSistemaDao(){
-        if(sistemaStringDao==null){
-            sistemaStringDao = getRuntimeExceptionDao(Sistema.class);
+    public RuntimeExceptionDao<Sistema, Integer> getRuntimeExceptionSistemaDao(){
+        if(sistemaIntegerDao==null){
+            sistemaIntegerDao = getRuntimeExceptionDao(Sistema.class);
         }
-        return sistemaStringDao;
+        return sistemaIntegerDao;
     }
 
     public RuntimeExceptionDao<promocion, Integer> getRuntimeExceptionPromocionDao(){

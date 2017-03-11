@@ -3,123 +3,6 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_39401e53c9cbbc30c6e47e77357db760645a7111.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_bb7c18b639f9852e1e6fac354f1da591e236ce00.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\glide-3.7.0_2de7ebc5cf9870e009d78eef0d3cf0412bfe952c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.3.0\f5e853a20b60758922453d56f9ae1e64af5cb3da\jackson-annotations-2.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.3.0_f5e93e1f58c88086b885e77bc562177b8b0bb13f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-android\4.48\afa06f539a4026c10b247386312aa67404b80a16\ormlite-android-4.48.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="afa06f539a4026c10b247386312aa67404b80a16">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\ormlite-android-4.48_84e89611d5962238e210edcc39950f571696886d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_23cef25b46f5f8b06461d698308d33a6677b8d6e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-core\4.48\e579bd2905d0399af5029aaaf9817d5fa0ca88a5\ormlite-core-4.48.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\ormlite-core-4.48_2fdd12cb22b4f4eb35258db405af523de90434e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_0ddcbd774413127b3a12a9aad0d36b26ffd28d85.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_2827234199ef532278fdc79a3b2dc9f413e748c6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_482822f5aca59ab0efdb3bc5bce3b4705910a9d0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2d83b54ed58e53975e8ae2b19d0c75307c4ee178">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run_7ca0106edd6a266c74dbb739be22309b21480bdc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.3.2\c75edc740a6d8cb1cef6fa82fa594e0bce561916\jackson-databind-2.3.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c75edc740a6d8cb1cef6fa82fa594e0bce561916">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\jackson-databind-2.3.2_6f8de77a23d67588fa789715fa74a249093ac522.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d3815c9d491768eb00224618bdaabdf59101c834">
-        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_65e630197b414999affee50eacf20c435036250b.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
@@ -144,6 +27,33 @@
         revision="25.0.1"
         sha1="e68f0e8e4b636ee30c4de58953be38d9b72a5e3b">
         <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\spring-android-core-1.0.1.RELEASE_e42b6e90d809cfa7d8d3266ff07ab233ea119035.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_39401e53c9cbbc30c6e47e77357db760645a7111.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_bb7c18b639f9852e1e6fac354f1da591e236ce00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\glide-3.7.0_2de7ebc5cf9870e009d78eef0d3cf0412bfe952c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -174,12 +84,48 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.3.0\f5e853a20b60758922453d56f9ae1e64af5cb3da\jackson-annotations-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.3.0_f5e93e1f58c88086b885e77bc562177b8b0bb13f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
         <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e242e79840f07322af45969e6baf97502ce89ede.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-android\4.48\afa06f539a4026c10b247386312aa67404b80a16\ormlite-android-4.48.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\ormlite-android-4.48_84e89611d5962238e210edcc39950f571696886d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_23cef25b46f5f8b06461d698308d33a6677b8d6e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.j256.ormlite\ormlite-core\4.48\e579bd2905d0399af5029aaaf9817d5fa0ca88a5\ormlite-core-4.48.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\ormlite-core-4.48_2fdd12cb22b4f4eb35258db405af523de90434e5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -192,6 +138,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_0ddcbd774413127b3a12a9aad0d36b26ffd28d85.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -201,12 +156,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_2827234199ef532278fdc79a3b2dc9f413e748c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_482822f5aca59ab0efdb3bc5bce3b4705910a9d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
         <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_8ecb2615bbf6ea429a19860b860a5fdcec7d418b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7c9c4331d6f0bcf73ce85a20ef31c66f9d84479c">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run_7ca0106edd6a266c74dbb739be22309b21480bdc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -252,6 +234,24 @@
         revision="25.0.1"
         sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
         <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_5f5784ef6fc0ea5e67a20d3d6f093b1343ac9abe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.3.2\c75edc740a6d8cb1cef6fa82fa594e0bce561916\jackson-databind-2.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c75edc740a6d8cb1cef6fa82fa594e0bce561916">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\jackson-databind-2.3.2_6f8de77a23d67588fa789715fa74a249093ac522.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0deae14ed9a98ae0421ced29273fbbb0b2e9dc39">
+        <dex dex="C:\Users\Administrador.BLUEMIX-PC04\Documents\Repositories\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_65e630197b414999affee50eacf20c435036250b.jar" />
     </item>
 
 </items>
