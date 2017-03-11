@@ -13,7 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-public class home extends AppCompatActivity
+public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
     @Override
@@ -40,6 +40,22 @@ public class home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //if (login){
+           // navigationView.getMenu().clear();
+          // navigationView.inflateMenu(R.menu.home_drawer_login);
+        //} else
+        //{
+            navigationView.getMenu().clear();
+            navigationView.inflateMenu(R.menu.home_drawer_logout);
+        //}
+
+
+
+
+
+
         Button btnPromos = (Button) findViewById(R.id.btnPromociones);
         btnPromos.setOnClickListener(this);
         Button btnServicio = (Button) findViewById(R.id.btnServicios);
@@ -99,7 +115,7 @@ public class home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_inicio_sesion) {
+        if (id == R.id.nav_ingresar) {
             Intent i = new Intent(this, Login.class);
             startActivity(i);
         } else if (id == R.id.nav_notificaciones) {
@@ -107,7 +123,7 @@ public class home extends AppCompatActivity
             startActivity(i);
 
         } else if (id == R.id.nav_contacto) {
-            Intent i = new Intent(this,contactanos.class);
+            Intent i = new Intent(this,QuienesSomos.class);
             startActivity(i);
 
         } else if (id == R.id.nav_buzon_sugerencias) {

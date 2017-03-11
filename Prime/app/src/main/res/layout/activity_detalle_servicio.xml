@@ -47,7 +47,7 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:text="Inserte aqui la descripcion asociada al servicio seleccionado"
+            android:text="Inserte aqui la descripcion asociada al Servicio seleccionado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView5"
@@ -74,7 +74,7 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:text="Inserte aqui la tarifa asociada al servicio seleccionado"
+            android:text="Inserte aqui la tarifa asociada al Servicio seleccionado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView7"
@@ -100,7 +100,7 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:text="Inserte aqui la duración asociada al servicio seleccionado"
+            android:text="Inserte aqui la duración asociada al Servicio seleccionado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView9"

@@ -11,8 +11,8 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.si.servialdana.prime.sql.modelo.Grupo;
 import com.si.servialdana.prime.sql.modelo.Usuario;
 import com.si.servialdana.prime.sql.modelo.Sistema;
-import com.si.servialdana.prime.sql.modelo.promocion;
-import com.si.servialdana.prime.sql.modelo.servicio;
+import com.si.servialdana.prime.sql.modelo.Promocion;
+import com.si.servialdana.prime.sql.modelo.Servicio;
 
 import java.sql.SQLException;
 
@@ -27,8 +27,8 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     private RuntimeExceptionDao<Grupo,Integer> rolIntegerDao;
     private RuntimeExceptionDao<Usuario, Integer> usuarioIntegerDao;
     private RuntimeExceptionDao<Sistema, Integer> sistemaIntegerDao = null;
-    private RuntimeExceptionDao<promocion, Integer> promocionIntegerDao = null;
-    private RuntimeExceptionDao<servicio, Integer> servicioIntegerDao=null;
+    private RuntimeExceptionDao<Promocion, Integer> promocionIntegerDao = null;
+    private RuntimeExceptionDao<Servicio, Integer> servicioIntegerDao=null;
 
 
     public DBHelper(Context context) {
@@ -41,8 +41,8 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource , Usuario.class);
             TableUtils.createTable(connectionSource, Grupo.class);
             TableUtils.createTable(connectionSource, Sistema.class);
-            TableUtils.createTable(connectionSource, promocion.class);
-            TableUtils.createTable(connectionSource, servicio.class);
+            TableUtils.createTable(connectionSource, Promocion.class);
+            TableUtils.createTable(connectionSource, Servicio.class);
         } catch (SQLException e) {
             throw new RuntimeException("Ha ocurrido un error en la creacion de la base de datos");
         }
@@ -75,16 +75,16 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
         return sistemaIntegerDao;
     }
 
-    public RuntimeExceptionDao<promocion, Integer> getRuntimeExceptionPromocionDao(){
+    public RuntimeExceptionDao<Promocion, Integer> getRuntimeExceptionPromocionDao(){
         if(promocionIntegerDao==null){
-         promocionIntegerDao = getRuntimeExceptionDao(promocion.class);
+         promocionIntegerDao = getRuntimeExceptionDao(Promocion.class);
         }
         return this.promocionIntegerDao;
     }
 
-    public RuntimeExceptionDao<servicio, Integer> getRuntimeExceptionServicioDao(){
+    public RuntimeExceptionDao<Servicio, Integer> getRuntimeExceptionServicioDao(){
         if(servicioIntegerDao==null){
-            servicioIntegerDao = getRuntimeExceptionDao(servicio.class);
+            servicioIntegerDao = getRuntimeExceptionDao(Servicio.class);
         }
         return this.servicioIntegerDao;
     }

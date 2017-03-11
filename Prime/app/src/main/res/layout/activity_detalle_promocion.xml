@@ -47,7 +47,7 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:text="Inserte aqui la descripcion asociada a la promocion seleccionada"
+            android:text="Inserte aqui la descripcion asociada a la Promocion seleccionada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView5"
@@ -74,7 +74,7 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:text="Inserte aqui la tarifa asociada a la promocion seleccionada"
+            android:text="Inserte aqui la tarifa asociada a la Promocion seleccionada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView7"
@@ -102,7 +102,7 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:text="Inserte aqui la fecha de disponibilidad asociada a la promocion seleccionada"
+            android:text="Inserte aqui la fecha de disponibilidad asociada a la Promocion seleccionada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView11"

@@ -1,6 +1,7 @@
 package com.si.servialdana.prime.adaptador;
 
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.si.servialdana.prime.DetalleServicio;
 import com.si.servialdana.prime.R;
-import com.si.servialdana.prime.sql.modelo.servicio;
+import com.si.servialdana.prime.sql.modelo.Servicio;
 
 import java.util.List;
 
@@ -22,11 +24,13 @@ import java.util.List;
 public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyViewHolder>{
 
     private Context mContext;
-    private List<servicio> servicioList;
+    private List<Servicio> servicioList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public ImageView thumbnail;
+
+        public Servicio Servicio;
 
         public MyViewHolder(View view) {
             super(view);
@@ -34,11 +38,41 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyView
 
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
             //overflow = (ImageView) view.findViewById(R.id.overflow);
+
+            view.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(v.getContext(), DetalleServicio.class);
+                    v.getContext().startActivity(intent);
+                  //  Toast.makeText(v.getContext(), "os version is: " + Servicio.getName(), Toast.LENGTH_SHORT).show();
+                }
+
+            });
+
+            thumbnail.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(v.getContext(), DetalleServicio.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
+            title.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(v.getContext(), DetalleServicio.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
+
         }
+
+
+
     }
 
 
-    public ServicioAdapter(Context mContext, List<servicio> servicioList) {
+    public ServicioAdapter(Context mContext, List<Servicio> servicioList) {
         this.mContext = mContext;
         this.servicioList = servicioList;
     }
@@ -53,12 +87,12 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyView
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        servicio servicio = servicioList.get(position);
-        holder.title.setText(servicio.getName());
-        //holder.count.setText(servicio.getNumOfSongs() + " Días");
+        Servicio Servicio = servicioList.get(position);
+        holder.title.setText(Servicio.getName());
+        //holder.count.setText(Servicio.getNumOfSongs() + " Días");
 
         // loading album cover using Glide library
-        Glide.with(mContext).load(servicio.getThumbnail()).into(holder.thumbnail);
+        Glide.with(mContext).load(Servicio.getThumbnail()).into(holder.thumbnail);
 
 
     }
