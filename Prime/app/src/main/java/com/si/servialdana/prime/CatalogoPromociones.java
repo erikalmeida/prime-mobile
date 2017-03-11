@@ -17,7 +17,7 @@ import android.util.TypedValue;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.adaptador.PromocionAdapter;
-import com.si.servialdana.prime.sql.modelo.promocion;
+import com.si.servialdana.prime.sql.modelo.Promocion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,8 +26,6 @@ import java.util.List;
 import android.util.Log;
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -41,16 +39,16 @@ public class CatalogoPromociones extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private PromocionAdapter adapter;
-    private List<promocion> promocionList;
+    private List<Promocion> promocionList;
 
     private DBHelper dbHelper;
-    private RuntimeExceptionDao<promocion, Integer> dao_promociones=null;
+    private RuntimeExceptionDao<Promocion, Integer> dao_promociones=null;
 
-    public void setPromocionList(List<promocion> promocionList){
+    public void setPromocionList(List<Promocion> promocionList){
         this.promocionList = promocionList;
     }
 
-    public List<promocion> getPromocionList(){
+    public List<Promocion> getPromocionList(){
         return this.promocionList;
     }
 
@@ -150,34 +148,34 @@ public class CatalogoPromociones extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        promocion a = new promocion(1,"True Romance", covers[0]);
+        Promocion a = new Promocion(1,"True Romance", covers[0]);
         promocionList.add(a);
 
-        a = new promocion(2,"Xscpae", covers[1]);
+        a = new Promocion(2,"Xscpae", covers[1]);
         promocionList.add(a);
 
-        a = new promocion(3,"Maroon 5", covers[2]);
+        a = new Promocion(3,"Maroon 5", covers[2]);
         promocionList.add(a);
 
-        a = new promocion(4,"Born to Die", covers[3]);
+        a = new Promocion(4,"Born to Die", covers[3]);
         promocionList.add(a);
 
-        a = new promocion(5,"Honeymoon", covers[4]);
+        a = new Promocion(5,"Honeymoon", covers[4]);
         promocionList.add(a);
 
-        a = new promocion(6,"I Need a Doctor", covers[5]);
+        a = new Promocion(6,"I Need a Doctor", covers[5]);
         promocionList.add(a);
 
-        a = new promocion(7,"Loud", covers[6]);
+        a = new Promocion(7,"Loud", covers[6]);
         promocionList.add(a);
 
-        a = new promocion(8,"Legend", covers[7]);
+        a = new Promocion(8,"Legend", covers[7]);
         promocionList.add(a);
 
-        a = new promocion(9,"Hello", covers[8]);
+        a = new Promocion(9,"Hello", covers[8]);
         promocionList.add(a);
 
-        a = new promocion(10,"Greatest Hits", covers[9]);
+        a = new Promocion(10,"Greatest Hits", covers[9]);
         promocionList.add(a);
 
         adapter.notifyDataSetChanged();
@@ -186,12 +184,12 @@ public class CatalogoPromociones extends AppCompatActivity {
     public void guardarPromociones(Context mcontext){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
         this.dao_promociones= dbHelper.getRuntimeExceptionPromocionDao();
-        promocion promocion;
-        promocion = this.getPromocionList().get(1);
-        dao_promociones.create(promocion);
+        Promocion Promocion;
+        Promocion = this.getPromocionList().get(1);
+        dao_promociones.create(Promocion);
     }
 
-    public List<promocion> consultarPromociones(){
+    public List<Promocion> consultarPromociones(){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
         this.dao_promociones= dbHelper.getRuntimeExceptionPromocionDao();
         this.promocionList= dao_promociones.queryForAll();
@@ -248,15 +246,15 @@ public class CatalogoPromociones extends AppCompatActivity {
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
-    private class ServicioPromociones extends AsyncTask<Void, Void, promocion[]> {
+    private class ServicioPromociones extends AsyncTask<Void, Void, Promocion[]> {
         @Override
-        protected promocion[] doInBackground(Void... params) {
+        protected Promocion[] doInBackground(Void... params) {
             try {
                 final String url = ""; //"https://bitpay.com/api/rates"
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                ResponseEntity<promocion[]> responseEntity = restTemplate.getForEntity(url, promocion[].class);
-                promocion[] promociones = responseEntity.getBody();
+                ResponseEntity<Promocion[]> responseEntity = restTemplate.getForEntity(url, Promocion[].class);
+                Promocion[] promociones = responseEntity.getBody();
                 /*MediaType contentType = responseEntity.getHeaders().getContentType();
                 HttpStatus statusCode = responseEntity.getStatusCode();*/
                 return promociones;
@@ -269,8 +267,8 @@ public class CatalogoPromociones extends AppCompatActivity {
 
 
         @Override
-        protected void onPostExecute(promocion[] promociones) {
-            List<promocion> listaPromocion = Arrays.asList(promociones);
+        protected void onPostExecute(Promocion[] promociones) {
+            List<Promocion> listaPromocion = Arrays.asList(promociones);
             CatalogoPromociones cp = new CatalogoPromociones();
             cp.setPromocionList(listaPromocion);
             cp.guardarPromociones(getApplicationContext());

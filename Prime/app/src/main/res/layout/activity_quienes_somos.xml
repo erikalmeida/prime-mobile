@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.si.servialdana.prime.Quienes_somos">
+    tools:context="com.si.servialdana.prime.QuienesSomos">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

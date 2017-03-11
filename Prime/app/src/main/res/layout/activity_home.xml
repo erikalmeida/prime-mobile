@@ -23,6 +23,6 @@
         app:itemIconTint="@color/accent"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home"
-        app:menu="@menu/activity_home_drawer" />
+        app:menu="@menu/home_drawer_login" />
 
 </android.support.v4.widget.DrawerLayout>

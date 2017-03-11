@@ -4,7 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "tb_promocion")
-public class promocion {
+public class Promocion {
 
     @DatabaseField(id = true)
     private int id;
@@ -15,10 +15,10 @@ public class promocion {
     @DatabaseField
     private int thumbnail;
 
-    public promocion() {
+    public Promocion() {
     }
 
-    public promocion(int id, String name, int thumbnail) {
+    public Promocion(int id, String name, int thumbnail) {
         this.id = id;
         this.name = name;
         this.thumbnail = thumbnail;

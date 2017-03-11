@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.si.servialdana.prime.R;
-import com.si.servialdana.prime.sql.modelo.promocion;
+import com.si.servialdana.prime.sql.modelo.Promocion;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ import java.util.List;
 public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<promocion> promocionList;
+    private List<Promocion> promocionList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -37,7 +37,7 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
     }
 
 
-    public PromocionAdapter(Context mContext, List<promocion> promocionList) {
+    public PromocionAdapter(Context mContext, List<Promocion> promocionList) {
         this.mContext = mContext;
         this.promocionList = promocionList;
     }
@@ -52,12 +52,12 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        promocion promocion = promocionList.get(position);
-        holder.title.setText(promocion.getName());
+        Promocion Promocion = promocionList.get(position);
+        holder.title.setText(Promocion.getName());
 
 
         // loading album cover using Glide library
-        Glide.with(mContext).load(promocion.getThumbnail()).into(holder.thumbnail);
+        Glide.with(mContext).load(Promocion.getThumbnail()).into(holder.thumbnail);
 
 
     }

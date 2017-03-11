@@ -15,9 +15,8 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
-import com.si.servialdana.prime.sql.modelo.servicio;
+import com.si.servialdana.prime.sql.modelo.Servicio;
 import com.si.servialdana.prime.adaptador.ServicioAdapter;
 
 import java.util.ArrayList;
@@ -27,8 +26,6 @@ import java.util.List;
 import android.util.Log;
 import android.os.AsyncTask;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -42,16 +39,16 @@ public class CatalogoServicios extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ServicioAdapter adapter;
-    private List<servicio> servicioList;
+    private List<Servicio> servicioList;
 
     private DBHelper dbHelper;
-    private RuntimeExceptionDao<servicio, Integer> dao_servicios=null;
+    private RuntimeExceptionDao<Servicio, Integer> dao_servicios=null;
 
-    public List<servicio> getServicioList() {
+    public List<Servicio> getServicioList() {
         return servicioList;
     }
 
-    public void setServicioList(List<servicio> servicioList) {
+    public void setServicioList(List<Servicio> servicioList) {
         this.servicioList = servicioList;
     }
 
@@ -141,34 +138,34 @@ public class CatalogoServicios extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        servicio a = new servicio(1,"Cambio de Aceite", covers[0]);
+        Servicio a = new Servicio(1,"Cambio de Aceite", covers[0]);
         servicioList.add(a);
 
-        a = new servicio(2,"Correa del Tiempo", covers[1]);
+        a = new Servicio(2,"Correa del Tiempo", covers[1]);
         servicioList.add(a);
 
-        a = new servicio(3,"Mantenimiento", covers[2]);
+        a = new Servicio(3,"Mantenimiento", covers[2]);
         servicioList.add(a);
 
-        a = new servicio(4,"Polea", covers[3]);
+        a = new Servicio(4,"Polea", covers[3]);
         servicioList.add(a);
 
-        a = new servicio(5,"servicio 1", covers[4]);
+        a = new Servicio(5,"Servicio 1", covers[4]);
         servicioList.add(a);
 
-        a = new servicio(6,"servicio 2", covers[5]);
+        a = new Servicio(6,"Servicio 2", covers[5]);
         servicioList.add(a);
 
-        a = new servicio(7,"servicio 3", covers[6]);
+        a = new Servicio(7,"Servicio 3", covers[6]);
         servicioList.add(a);
 
-        a = new servicio(8,"servicio 4", covers[7]);
+        a = new Servicio(8,"Servicio 4", covers[7]);
         servicioList.add(a);
 
-        a = new servicio(9,"servicio 5", covers[8]);
+        a = new Servicio(9,"Servicio 5", covers[8]);
         servicioList.add(a);
 
-        a = new servicio(10,"servicio 6", covers[9]);
+        a = new Servicio(10,"Servicio 6", covers[9]);
         servicioList.add(a);
 
         adapter.notifyDataSetChanged();
@@ -177,12 +174,12 @@ public class CatalogoServicios extends AppCompatActivity {
     public void guardarServicios(Context mcontext){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
         this.dao_servicios= dbHelper.getRuntimeExceptionServicioDao();
-        servicio servi;
+        Servicio servi;
         servi = this.getServicioList().get(1);
         dao_servicios.create(servi);
     }
 
-    public List<servicio> consultarPromociones(){
+    public List<Servicio> consultarPromociones(){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
         this.dao_servicios= dbHelper.getRuntimeExceptionServicioDao();
         this.servicioList= dao_servicios.queryForAll();
@@ -246,15 +243,15 @@ public class CatalogoServicios extends AppCompatActivity {
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
-    private class ServicioCatalogo extends AsyncTask<Void, Void, servicio[]> {
+    private class ServicioCatalogo extends AsyncTask<Void, Void, Servicio[]> {
         @Override
-        protected servicio[] doInBackground(Void... params) {
+        protected Servicio[] doInBackground(Void... params) {
             try {
                 final String url = ""; //"https://bitpay.com/api/rates"
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                ResponseEntity<servicio[]> responseEntity = restTemplate.getForEntity(url, servicio[].class);
-                servicio[] servicios = responseEntity.getBody();
+                ResponseEntity<Servicio[]> responseEntity = restTemplate.getForEntity(url, Servicio[].class);
+                Servicio[] servicios = responseEntity.getBody();
                 /*MediaType contentType = responseEntity.getHeaders().getContentType();
                 HttpStatus statusCode = responseEntity.getStatusCode();*/
                 return servicios;
@@ -267,8 +264,8 @@ public class CatalogoServicios extends AppCompatActivity {
 
 
         @Override
-        protected void onPostExecute(servicio[] servicios) {
-            List<servicio> listaServicios = Arrays.asList(servicios);
+        protected void onPostExecute(Servicio[] servicios) {
+            List<Servicio> listaServicios = Arrays.asList(servicios);
             CatalogoServicios cp = new CatalogoServicios();
             cp.setServicioList(listaServicios);
             cp.guardarServicios(getApplicationContext());

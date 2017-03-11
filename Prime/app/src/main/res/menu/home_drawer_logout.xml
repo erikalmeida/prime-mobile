@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="CONOCENOS">
+    <menu >
+        <item
+        android:id="@+id/nav_contacto"
+        android:icon="@drawable/ic_call_black_24px"
+        android:title="Contacto" />
+    </menu>
+    </item>
+
+    <item android:title="CUENTA DE USUARIO">
+        <menu>
+            <item
+                android:id="@+id/nav_ingresar"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="Ingresar" />
+        </menu>
+    </item>
+
+</menu>
