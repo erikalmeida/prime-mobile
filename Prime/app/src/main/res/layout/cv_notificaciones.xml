@@ -9,6 +9,7 @@
     android:layout_width="match_parent"
     app:cardCornerRadius="1dp"
     android:elevation="1dp"
+    tools:clickable="true"
     android:contextClickable="true">
     <LinearLayout
         android:orientation="vertical"
@@ -32,7 +33,8 @@
                     app:srcCompat="@drawable/ic_notifications_black_24px"
                     android:id="@+id/imageViewTipoNotificacion"
                     android:layout_margin="12dp"
-                    android:layout_height="40dp" />
+                    android:layout_height="40dp"
+                    tools:clickable="true"/>
             </LinearLayout>
 
             <LinearLayout
@@ -56,7 +58,8 @@
                         android:textSize="15sp"
                         android:layout_margin="3dp"
                         android:textColor="@color/accent"
-                        android:layout_weight="1.24" />
+                        android:layout_weight="1.24"
+                        tools:clickable="true"/>
 
                     <TextView
                         android:text="01/01/2017"
@@ -78,7 +81,8 @@
                     android:layout_width="wrap_content"
                     android:layout_margin="3dp"
                     android:textSize="12sp"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
+                    tools:clickable="true"
                     android:singleLine="true" />
 
             </LinearLayout>

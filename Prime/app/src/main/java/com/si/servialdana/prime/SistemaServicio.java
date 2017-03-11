@@ -52,14 +52,14 @@ public class SistemaServicio extends AppCompatActivity {
     public void guardarSistema(){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
         dao_sistema= dbHelper.getRuntimeExceptionSistemaDao();
-        dao_sistema.create(new Sistema("1123","contenido"));
+        dao_sistema.create(new Sistema("1124","contenido"));
     }
 
     private class HttpRequestTask extends AsyncTask<Void, Void, Sistema> {
         @Override
         protected Sistema doInBackground(Void... params) {
             try {
-                final String url = "http://rest-service.guides.spring.io/greeting";
+                final String url = "http://192.168.1.109:8005/PaqueteController";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Sistema sistema = restTemplate.getForObject(url, Sistema.class);

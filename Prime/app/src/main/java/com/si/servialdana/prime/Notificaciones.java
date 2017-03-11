@@ -25,11 +25,11 @@ public class Notificaciones extends AppCompatActivity {
         List<String> titulos = new ArrayList<>();
         titulos.add(0,"Promocion por expirar");
         titulos.add(1,"Solicitud de reclamo");
-        titulos.add(2,"Estatus de servicio");
+        titulos.add(2,"Estatus de Servicio");
         titulos.add(3,"Mantenimiento preventivo");
         titulos.add(4,"Promocion por expirar");
         titulos.add(5,"Solicitud de reclamo");
-        titulos.add(6,"Estatus de servicio");
+        titulos.add(6,"Estatus de Servicio");
         titulos.add(7,"Cita pendiente");
 
         RecyclerViewAdapterNotificaciones adaptador=new RecyclerViewAdapterNotificaciones(titulos);
