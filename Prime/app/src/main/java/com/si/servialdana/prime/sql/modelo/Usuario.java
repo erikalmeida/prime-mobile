@@ -15,8 +15,6 @@ public class Usuario {
     @DatabaseField
     private String contrasenna;
 
-    @DatabaseField( foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true)
-    private Grupo rol;
 
     public Usuario() {
     }
@@ -49,11 +47,5 @@ public class Usuario {
         this.contrasenna = contrasenna;
     }
 
-    public Grupo getRol() {
-        return rol;
-    }
 
-    public void setRol(Grupo rol) {
-        this.rol = rol;
-    }
 }

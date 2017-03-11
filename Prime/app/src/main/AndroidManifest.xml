@@ -11,7 +11,13 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_inicio_sesion"
-            android:parentActivityName=".Home">
+            android:parentActivityName=".home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name=".CalificacionServicio"
@@ -22,42 +28,41 @@
         <activity
             android:name=".Notificaciones"
             android:label="@string/title_activity_notificaciones"
-            android:parentActivityName=".Home"/>
+            android:parentActivityName=".home"/>
         <activity
-            android:name=".Home"
+            android:name=".home"
+            android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
         <activity android:name=".Principal" />
         <activity
             android:name=".BuzonSugerencias"
             android:label="@string/title_activity_buzon_sugerencias"
-            android:parentActivityName=".Home">
-        </activity>
+            android:parentActivityName=".home"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Contactanos"
+            android:name=".contactanos"
             android:label="@string/title_activity_contacto"
-            android:parentActivityName=".Home" />
+            android:parentActivityName=".home" />
         <activity
             android:name=".PerfilUsuario"
             android:label="@string/title_activity_perfil"
-            android:parentActivityName=".Home"/>
+            android:parentActivityName=".home" />
         <activity
             android:name=".CatalogoPromociones"
             android:label="@string/title_activity_promociones"
-            android:parentActivityName=".Home"
+            android:parentActivityName=".home"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".QuienesSomos"
+            android:name=".Quienes_somos"
             android:label="@string/title_activity_quienes_somos"
-            android:parentActivityName=".Home"
+            android:parentActivityName=".home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CatalogoServicios"
             android:label="@string/title_activity_catalogo_servicios"
-            android:parentActivityName=".Home"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:parentActivityName=".home"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DetalleServicio"
             android:label="@string/title_activity_detalle_servicio"
@@ -76,12 +81,6 @@
 
         </activity>
         <activity android:name=".SistemaServicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
     </application>
 

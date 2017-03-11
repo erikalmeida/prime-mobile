@@ -7,58 +7,71 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "tb_sistema")
 public class Sistema {
 
-    /*@DatabaseField(id = true)
-    private long id;
+    @DatabaseField(id = true)
+    private int id;
 
     @DatabaseField
-    private String nroTelefono;
+    private String celular;
 
     @DatabaseField
-    private String email;
+    private String correo;
 
     @DatabaseField
-    private String direccion;*/
-
-    @DatabaseField (id = true)
-    private String id;
+    private String direccion;
 
     @DatabaseField
-    private String content;
+    private String mapa;
+
 
     public Sistema(){
 
     }
 
-    public Sistema(String id, String content){
+    public Sistema(int id, String celular, String correo, String direccion, String mapa){
         this.id = id;
-        this.content = content;
+        this.direccion = direccion;
+        this.celular = celular;
+        this.correo = correo;
+        this.mapa = mapa;
     }
 
-    /*public String getNroTelefono() {
-        return this.nroTelefono;
+    public int getId() {
+        return id;
     }
 
-    public void setNroTelefono(String nroTelefono) {
-        this.nroTelefono = nroTelefono;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getEmail() { return this.email;}
-
-    public void setEmail(String email){this.email = email;}
-
-    public String getDireccion(){return this.direccion;}
-
-    public void setDireccion(String direccion){this.direccion = direccion;}*/
-
-    public String getId() {
-        return this.id;
+    public String getCelular() {
+        return celular;
     }
 
-    public String getContent() {
-        return this.content;
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
-    public void setId(String id){this.id=id;}
+    public String getCorreo() {
+        return correo;
+    }
 
-    public void setContent(String content){this.content=content;}
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getMapa() {
+        return mapa;
+    }
+
+    public void setMapa(String mapa) {
+        this.mapa = mapa;
+    }
 }

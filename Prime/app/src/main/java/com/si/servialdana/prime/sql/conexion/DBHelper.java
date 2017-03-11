@@ -9,13 +9,10 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.si.servialdana.prime.sql.modelo.Grupo;
-import com.si.servialdana.prime.sql.modelo.Notificacion;
-import com.si.servialdana.prime.sql.modelo.Promocion;
-import com.si.servialdana.prime.sql.modelo.Servicio;
-import com.si.servialdana.prime.sql.modelo.TipoCalificacionServicio;
-import com.si.servialdana.prime.sql.modelo.TipoNotificacion;
 import com.si.servialdana.prime.sql.modelo.Usuario;
 import com.si.servialdana.prime.sql.modelo.Sistema;
+import com.si.servialdana.prime.sql.modelo.Promocion;
+import com.si.servialdana.prime.sql.modelo.Servicio;
 
 import java.sql.SQLException;
 
@@ -29,7 +26,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     //Aqui van los atributos relacionados a las tablas de base de datos que se desean gestionar
     private RuntimeExceptionDao<Grupo,Integer> rolIntegerDao;
     private RuntimeExceptionDao<Usuario, Integer> usuarioIntegerDao;
-    private RuntimeExceptionDao<Sistema, String> sistemaStringDao = null;
+    private RuntimeExceptionDao<Sistema, Integer> sistemaIntegerDao = null;
     private RuntimeExceptionDao<Promocion, Integer> promocionIntegerDao = null;
     private RuntimeExceptionDao<Servicio, Integer> servicioIntegerDao=null;
 
@@ -46,8 +43,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, Sistema.class);
             TableUtils.createTable(connectionSource, Promocion.class);
             TableUtils.createTable(connectionSource, Servicio.class);
-            TableUtils.createTable(connectionSource, Notificacion.class);
-            TableUtils.createTable(connectionSource, TipoNotificacion.class);
         } catch (SQLException e) {
             throw new RuntimeException("Ha ocurrido un error en la creacion de la base de datos");
         }
@@ -73,11 +68,11 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     }
 
 
-    public RuntimeExceptionDao<Sistema, String> getRuntimeExceptionSistemaDao(){
-        if(sistemaStringDao==null){
-            sistemaStringDao = getRuntimeExceptionDao(Sistema.class);
+    public RuntimeExceptionDao<Sistema, Integer> getRuntimeExceptionSistemaDao(){
+        if(sistemaIntegerDao==null){
+            sistemaIntegerDao = getRuntimeExceptionDao(Sistema.class);
         }
-        return sistemaStringDao;
+        return sistemaIntegerDao;
     }
 
     public RuntimeExceptionDao<Promocion, Integer> getRuntimeExceptionPromocionDao(){
