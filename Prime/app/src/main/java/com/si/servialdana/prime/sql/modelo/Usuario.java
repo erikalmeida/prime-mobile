@@ -10,7 +10,7 @@ public class Usuario {
     private Long id;
 
     @DatabaseField
-    private String usuario;
+    private String correo;
 
     @DatabaseField
     private String contrasenna;
@@ -19,8 +19,9 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String usuario, String contrasenna){
-
+    public Usuario(String correo, String contrasenna){
+        this.correo = correo;
+        this.contrasenna = contrasenna;
     }
 
     public Long getId() {
@@ -31,12 +32,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getContrasenna() {

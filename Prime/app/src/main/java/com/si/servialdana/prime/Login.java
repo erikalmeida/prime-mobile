@@ -30,7 +30,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button btnLogin;
     private EditText txtUsuario;
     private EditText txtContrasenna;
-    private Usuario usuario;
 
 
     @Override
@@ -55,12 +54,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onClick(View v) {
+        LoginServicio ls = new LoginServicio();
         switch (v.getId()) {
             case R.id.buttonLogin:
-                this.usuario = new Usuario(this.txtUsuario.getText().toString(), this.txtContrasenna.getText().toString());
-                Toast.makeText(this, this.txtUsuario.getText(), Toast.LENGTH_SHORT).show();
+                new LoginServicio().execute();
                 break;
         }
     }
@@ -71,32 +71,40 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private class LoginServicio extends AsyncTask<Void, Void, Usuario> {
+
+        Usuario usuario;
+
+        @Override
+        protected void onPreExecute() {
+            EditText username = (EditText) findViewById(R.id.editTextUserLogin);
+            EditText contrasenna = (EditText) findViewById(R.id.editTextPasswordLogin);
+            usuario = new Usuario(username.getText().toString(), contrasenna.getText().toString());
+        }
+
         @Override
         protected Usuario doInBackground(Void... params) {
             try {
-                final String url = "http://192.168.1.107:8080/servicios_crm/ServicioMovilPrime?solicitud=";
-                Usuario usuario = new Usuario("oscareduardo937","12345");
-                Usuario respuesta;
+                final String url = "http://192.168.1.107:8080/servicios_crm/ServicioMovilPrime?solicitud=login";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                respuesta = restTemplate.postForObject(url,usuario, Usuario.class);
-                if(respuesta!=null){
-                    //Codigo para llevar al menu de un usuario
+                usuario = restTemplate.postForObject(url,this.usuario, Usuario.class);
+                if(usuario!=null){
+                    Log.i("Usuario", usuario.getCorreo());
                 }
                 else{
-                    //Codigo para llevar al menu de un no usuario
+                    Log.i("Error", "Credenciales incorrectas");
                 }
             } catch (Exception e) {
                 Log.e("Login", e.getMessage(), e);
             }
 
-            return null;
+            return usuario;
         }
 
 
         @Override
         protected void onPostExecute(Usuario usuario) {
-            // Algun codigo para manejar la interfaz
+
         }
 
     }
