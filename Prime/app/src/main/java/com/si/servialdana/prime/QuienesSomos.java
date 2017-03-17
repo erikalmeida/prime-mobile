@@ -1,5 +1,6 @@
 package com.si.servialdana.prime;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import android.os.AsyncTask;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+import android.util.Log;
+
+import android.widget.TextView;
+import com.si.servialdana.prime.sql.modelo.Sistema;
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.si.servialdana.prime.sql.conexion.DBHelper;
 
 public class QuienesSomos extends AppCompatActivity {
 
@@ -32,6 +44,18 @@ public class QuienesSomos extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+
+    private Sistema sistema;
+    private DBHelper dbHelper;
+    private RuntimeExceptionDao<Sistema, Integer> dao_sistema=null;
+
+    public Sistema getSistema() {
+        return sistema;
+    }
+
+    public void setSistema(Sistema sistema) {
+        this.sistema = sistema;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +76,23 @@ public class QuienesSomos extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new HttpRequestTask().execute();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -136,5 +166,50 @@ public class QuienesSomos extends AppCompatActivity {
             }
             return null;
         }
+
+    } //Class Sections Pager Adapter
+
+    public void guardarSistema(Context mcontext){
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
+        dao_sistema= dbHelper.getRuntimeExceptionSistemaDao();
+        //dao_sistema.createIfNotExists(this.getSistema());
+        dao_sistema.createIfNotExists(this.getSistema());
+    }
+
+    private class HttpRequestTask extends AsyncTask<Void, Void, Sistema> {
+
+        QuienesSomos qs;
+
+        @Override
+        protected Sistema doInBackground(Void... params) {
+            try {
+                Sistema sistema = new Sistema();
+                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                sistema = restTemplate.getForObject(url, Sistema.class);
+                Log.i("Correo:", sistema.getCorreo());
+                return sistema;
+            } catch (Exception e) {
+                Log.e("MainActivity", e.getMessage(), e);
+            }
+
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(Sistema sistema) {
+            TextView idTextUbicanos = (TextView) findViewById(R.id.textViewUbicanosDireccion);
+            TextView idTextCelular = (TextView) findViewById(R.id.textViewCelular);
+            TextView idTextCorreo = (TextView) findViewById(R.id.textViewCorreoEmpresa);
+            idTextUbicanos.setText(sistema.getDireccion());
+            idTextCelular.setText(sistema.getCelular());
+            idTextCorreo.setText(sistema.getCorreo());
+             qs = new QuienesSomos();
+            qs.setSistema(sistema);
+            qs.guardarSistema(getApplicationContext());
+        }
+
     }
 }
