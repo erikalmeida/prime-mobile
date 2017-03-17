@@ -1,20 +1,23 @@
 package com.si.servialdana.prime.adaptador;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.si.servialdana.prime.R;
+import com.si.servialdana.prime.sql.modelo.Notificacion;
 
 import java.util.List;
 
 public class RecyclerViewAdapterNotificaciones extends RecyclerView.Adapter<ViewHolderNotificaciones>  {
 
-    private List<String> datos;
+    private Context mContext;
+    private List<Notificacion> notificacionList;
     private int posicion;
 
-    public RecyclerViewAdapterNotificaciones(List<String> datos){
-        this.datos = datos;
+    public RecyclerViewAdapterNotificaciones(List<Notificacion> notificacionList){
+        this.notificacionList = notificacionList;
     }
 
     @Override
@@ -29,12 +32,31 @@ public class RecyclerViewAdapterNotificaciones extends RecyclerView.Adapter<View
     @Override
     public void onBindViewHolder(ViewHolderNotificaciones holder, int position) {
         posicion=position;
-        holder.titulo.setText(datos.get(position));
+        Notificacion noti =notificacionList.get(posicion);
+        holder.titulo.setText(noti.getNombre());
+        holder.descripcion.setText(noti.getDescripcion());
+        holder.fecha.setText(noti.getFechacreacion());
+        holder.setTipo(noti.getIdtiponotificacion());
+        int tipo = noti.getIdtiponotificacion();
+
+        switch (tipo)
+        {
+            case 1: holder.icono.setImageResource(R.drawable.ic_noti_promo);
+                    break;
+            case 2: holder.icono.setImageResource(R.drawable.ic_noti_presupuesto);
+                    break;
+            case 3: holder.icono.setImageResource(R.drawable.ic_noti_eventualidad);
+                    break;
+            case 4: holder.icono.setImageResource(R.drawable.ic_noti_entrega);
+                    break;
+            case 5: holder.icono.setImageResource(R.drawable.ic_noti_califica);
+                    break;
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return datos.size();
+        return notificacionList.size();
     }
 }

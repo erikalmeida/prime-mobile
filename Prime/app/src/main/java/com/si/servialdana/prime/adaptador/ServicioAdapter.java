@@ -29,27 +29,19 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public ImageView thumbnail;
-
         public Servicio Servicio;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
-
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
-            //overflow = (ImageView) view.findViewById(R.id.overflow);
-
             view.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-
                     Intent intent = new Intent(v.getContext(), DetalleServicio.class);
                     v.getContext().startActivity(intent);
-                  //  Toast.makeText(v.getContext(), "os version is: " + Servicio.getName(), Toast.LENGTH_SHORT).show();
                 }
-
             });
-
             thumbnail.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -64,11 +56,7 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyView
                     v.getContext().startActivity(intent);
                 }
             });
-
         }
-
-
-
     }
 
 
