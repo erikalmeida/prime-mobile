@@ -23,9 +23,8 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buzon_sugerencias);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        setContentView(R.layout.activity_buzon_sugerencias);
         // Spinner element
         spinnerTipo = (Spinner) findViewById(R.id.spinnerTipo);
         spinnerMotivo = (Spinner) findViewById(R.id.spinnerMotivo);

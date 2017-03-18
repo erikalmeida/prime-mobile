@@ -9,5 +9,6 @@ public class DetallePresupuesto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_presupuesto);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

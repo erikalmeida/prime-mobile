@@ -42,14 +42,14 @@ public class Home extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        //if (login){
-           // navigationView.getMenu().clear();
-          // navigationView.inflateMenu(R.menu.home_drawer_login);
-        //} else
-        //{
+       // if (login){
+           navigationView.getMenu().clear();
+           navigationView.inflateMenu(R.menu.home_drawer_login);
+       /* } else
+        {
             navigationView.getMenu().clear();
             navigationView.inflateMenu(R.menu.home_drawer_logout);
-        //}
+        }*/
 
 
 
