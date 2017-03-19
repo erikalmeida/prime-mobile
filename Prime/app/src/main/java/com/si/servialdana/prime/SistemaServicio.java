@@ -21,7 +21,7 @@ import com.si.servialdana.prime.Fragment_quienes_somos_ubicanos;
 
 public class SistemaServicio extends AppCompatActivity {
 
-   /* private Sistema sistema;
+    private Sistema sistema;
     private DBHelper dbHelper;
     private RuntimeExceptionDao<Sistema, Integer> dao_sistema=null;
 
@@ -101,6 +101,6 @@ public class SistemaServicio extends AppCompatActivity {
         }
 
     }
-            */
+
 
 }
