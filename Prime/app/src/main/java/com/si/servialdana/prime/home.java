@@ -13,15 +13,34 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+//import com.si.servialdana.prime.sql.modelo.Session;
+
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
+    private boolean login;
+    // User Session Manager Class
+    UserSessionManager session;
+    /*private Session sesion;
+
+
+    public Session getSesion() {
+        return sesion;
+    }
+
+    public void setSesion(Session sesion) {
+        this.sesion = sesion;
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //sesion = new Session(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // Session class instance
+        session = new UserSessionManager(this);
 
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
           fab.setOnClickListener(new View.OnClickListener() {
@@ -41,27 +60,36 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-       // if (login){
-           navigationView.getMenu().clear();
-           navigationView.inflateMenu(R.menu.home_drawer_login);
-       /* } else
-        {
+        Intent i = getIntent();
+        if(session.checkLogin() == true /*|| i.hasExtra("login")*/){
+             //login = (boolean) i.getExtras().getBoolean("login");
+           //if (login){
+              navigationView.getMenu().clear();
+              navigationView.inflateMenu(R.menu.home_drawer_login);
+          // }
+           }
+        else
+           {
+               navigationView.getMenu().clear();
+               navigationView.inflateMenu(R.menu.home_drawer_logout);
+           }
+        //}
+        /*else{
             navigationView.getMenu().clear();
             navigationView.inflateMenu(R.menu.home_drawer_logout);
         }*/
-
-
-
-
-
-
         Button btnPromos = (Button) findViewById(R.id.btnPromociones);
         btnPromos.setOnClickListener(this);
         Button btnServicio = (Button) findViewById(R.id.btnServicios);
         btnServicio.setOnClickListener(this);
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        login = false;
+    }
 
     @Override
     public void onClick(View v) {
@@ -132,6 +160,8 @@ public class Home extends AppCompatActivity
         } else if(id == R.id.nav_perfil){
             Intent i = new Intent(this,PerfilUsuario.class);
             startActivity(i);
+        } else if(id== R.id.nav_salir){
+            session.logoutUser();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

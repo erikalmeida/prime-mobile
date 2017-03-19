@@ -12,70 +12,86 @@ import java.util.Date;
 public class Notificacion {
 
     @DatabaseField(id = true)
-    private int id;
+    private int idnotificacion;
     @DatabaseField
-    private int idTipo;
+    private int idtiponotificacion;
     @DatabaseField
-    private int idPromocion;
+    private int idpromocion;
     @DatabaseField
-    private int idPresupuesto;
+    private int idpresupuesto;
     @DatabaseField
-    private int idOrdenEntrega;
+    private int idordenentrega;
     @DatabaseField
-    private int idEventualidad;
+    private int ideventualidad;
     @DatabaseField
-    private String name;
+    private String nombre;
     @DatabaseField
     private String descripcion;
     @DatabaseField
-    private Date fechaCreacion;
+    private String fechacreacion;
 
-    public Notificacion(int id, int idTipo, int idPromocion, int idPresupuesto, int idOrdenEntrega, int idEventualidad, String name, String descripcion, Date fechaCreacion) {
-        this.id = id;
-        this.idTipo = idTipo;
-        this.idPromocion = idPromocion;
-        this.idPresupuesto = idPresupuesto;
-        this.idOrdenEntrega = idOrdenEntrega;
-        this.idEventualidad = idEventualidad;
-        this.name = name;
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
+    }
+
+    @DatabaseField
+    private String estatus;
+
+    public Notificacion(){
+
+    }
+
+    public Notificacion(int idnotificacion, int idtiponotificacion, int idpromocion, int idpresupuesto, int idordenentrega, int ideventualidad, String nombre, String descripcion, String fechacreacion, String estatus) {
+        this.idnotificacion = idnotificacion;
+        this.idtiponotificacion = idtiponotificacion;
+        this.idpromocion = idpromocion;
+        this.idpresupuesto = idpresupuesto;
+        this.idordenentrega = idordenentrega;
+        this.ideventualidad = ideventualidad;
+        this.nombre = nombre;
         this.descripcion = descripcion;
-        this.fechaCreacion = fechaCreacion;
+        this.fechacreacion = fechacreacion;
+        this.estatus= estatus;
     }
 
 
-    public int getId() {return id;}
+    public int getIdnotificacion() {return idnotificacion;}
 
-    public void setId(int id) {this.id = id;}
+    public void setIdnotificacion(int idnotificacion) {this.idnotificacion = idnotificacion;}
 
-    public int getIdTipo() {return idTipo;}
+    public int getIdtiponotificacion() {return idtiponotificacion;}
 
-    public void setIdTipo(int idTipo) {this.idTipo = idTipo;}
+    public void setIdtiponotificacion(int idtiponotificacion) {this.idtiponotificacion = idtiponotificacion;}
 
-    public int getIdPromocion() {return idPromocion;}
+    public int getIdpromocion() {return idpromocion;}
 
-    public void setIdPromocion(int idPromocion) {this.idPromocion = idPromocion;}
+    public void setIdpromocion(int idpromocion) {this.idpromocion = idpromocion;}
 
-    public int getIdPresupuesto() {return idPresupuesto;}
+    public int getIdpresupuesto() {return idpresupuesto;}
 
-    public void setIdPresupuesto(int idPresupuesto) {this.idPresupuesto = idPresupuesto;}
+    public void setIdpresupuesto(int idpresupuesto) {this.idpresupuesto = idpresupuesto;}
 
-    public int getIdOrdenEntrega() {return idOrdenEntrega;}
+    public int getIdordenentrega() {return idordenentrega;}
 
-    public void setIdOrdenEntrega(int idOrdenEntrega) {this.idOrdenEntrega = idOrdenEntrega;}
+    public void setIdordenentrega(int idordenentrega) {this.idordenentrega = idordenentrega;}
 
-    public int getIdEventualidad() {return idEventualidad;}
+    public int getIdeventualidad() {return ideventualidad;}
 
-    public void setIdEventualidad(int idEventualidad) {this.idEventualidad = idEventualidad;}
+    public void setIdeventualidad(int ideventualidad) {this.ideventualidad = ideventualidad;}
 
-    public String getName() {return name;}
+    public String getNombre() {return nombre;}
 
-    public void setName(String name) {this.name = name;}
+    public void setNombre(String nombre) {this.nombre = nombre;}
 
     public String getDescripcion() {return descripcion;}
 
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
-    public Date getFechaCreacion() {return fechaCreacion;}
+    public String getFechacreacion() {return fechacreacion;}
 
-    public void setFechaCreacion(Date fechaCreacion) {this.fechaCreacion = fechaCreacion;}
+    public void setFechacreacion(String fechacreacion) {this.fechacreacion = fechacreacion;}
 }

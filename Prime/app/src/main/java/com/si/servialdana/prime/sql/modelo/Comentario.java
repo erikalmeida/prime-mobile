@@ -9,12 +9,23 @@ public class Comentario {
     private long id_tipo_comentario;
     private long id_motivo_comentario;
     private long id_cliente;
+    private String comentario;
 
-    public Comentario(long id_comentario,  long id_tipo_comentario, long id_motivo_comentario, long id_cliente) {
+    public Comentario(long id_comentario,  long id_tipo_comentario, long id_motivo_comentario, long id_cliente, String comentario) {
         this.id_comentario = id_comentario;
         this.id_tipo_comentario = id_tipo_comentario;
         this.id_motivo_comentario = id_motivo_comentario;
         this.id_cliente = id_cliente;
+        this.comentario = comentario;
+
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     public long getId_comentario() {

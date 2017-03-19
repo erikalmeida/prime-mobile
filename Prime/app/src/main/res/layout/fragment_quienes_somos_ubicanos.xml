@@ -41,10 +41,9 @@
             android:layout_height="100dp" />
 
         <TextView
-            android:text="Carrera 22 entre calles 12 y 13, Barquisimeto, Edo. Lara."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView1"
+            android:id="@+id/textViewUbicanosDireccion"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"

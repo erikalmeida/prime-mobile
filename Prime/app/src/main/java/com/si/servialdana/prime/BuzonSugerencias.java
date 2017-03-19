@@ -2,24 +2,38 @@ package com.si.servialdana.prime;
 
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.si.servialdana.prime.sql.modelo.Usuario;
+import com.si.servialdana.prime.sql.modelo.Comentario;
+
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BuzonSugerencias extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
+    private Button btnEnviar;
     //declare spinners
     Spinner spinnerTipo;
     Spinner spinnerMotivo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +72,9 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
         // Spinner click listener
         spinnerTipo.setOnItemSelectedListener(this);
         spinnerMotivo.setOnItemSelectedListener(this);
+
+        btnEnviar = (Button) findViewById(R.id.buttonEnviarSugerencia);
+        //btnEnviar.setOnClickListener(this);
     }
 
     @Override
@@ -81,7 +98,52 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), item, Toast.LENGTH_LONG).show();
     }
+
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new BuzonServicio().execute();
+    }
+
+
+    private class BuzonServicio extends AsyncTask<Void, Void, Comentario> {
+
+        Comentario comentario;
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+
+        @Override
+        protected Comentario doInBackground(Void... params) {
+            try {
+                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=buzon";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                String urlParams = url + "&nombre=" + "" + "&idTipoComentario=" + "1" + "&idMotivoComentario=" + "2" + "&comentario=" + "Este es un comentario";
+                comentario = restTemplate.postForObject(urlParams,this.comentario, Comentario.class);
+
+                return comentario;
+            } catch (Exception e) {
+                Log.e("Login", e.getMessage(), e);
+            }
+
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(Comentario comentario ) {
+
+                Log.i("Comentario", comentario.getComentario());
+
+        }
+
     }
 }

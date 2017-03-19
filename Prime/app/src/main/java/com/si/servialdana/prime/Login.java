@@ -16,6 +16,7 @@ import android.app.ProgressDialog;
 import android.util.Base64;
 import android.util.Base64.*;
 import com.si.servialdana.prime.sql.modelo.Usuario;
+//import com.si.servialdana.prime.sql.modelo.Session;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -30,6 +31,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button btnLogin;
     private EditText txtUsuario;
     private EditText txtContrasenna;
+    private Home home;
 
 
     @Override
@@ -37,6 +39,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // User Session Manager
         btnLogin = (Button) findViewById(R.id.buttonLogin);
         txtUsuario = (EditText) findViewById(R.id.editTextUserLogin);
         txtContrasenna = (EditText) findViewById(R.id.editTextPasswordLogin);
@@ -84,27 +87,48 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         @Override
         protected Usuario doInBackground(Void... params) {
             try {
-                final String url = "http://812d8684.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=login";
+                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=login";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                usuario = restTemplate.postForObject(url,this.usuario, Usuario.class);
-                if(usuario!=null){
+                String urlParams = url + "&correo=" + usuario.getCorreo();
+                usuario = restTemplate.postForObject(urlParams,this.usuario, Usuario.class);
+                Log.i("Usuario:", usuario.getCorreo());
+                Log.i("Usuario:", usuario.getId().toString());
+                /*if(usuario!=null){
                     Log.i("Usuario", usuario.getCorreo());
                 }
                 else{
                     Log.i("Error", "Credenciales incorrectas");
-                }
+                }*/
+                return usuario;
             } catch (Exception e) {
                 Log.e("Login", e.getMessage(), e);
             }
 
-            return usuario;
+            return null;
         }
 
 
         @Override
         protected void onPostExecute(Usuario usuario) {
-
+            //Session sesion = new Session(getApplicationContext());
+            // User Session Manager Class
+            UserSessionManager session;
+            session = new UserSessionManager(getApplicationContext());
+            Intent intent = new Intent(getApplicationContext(), Home.class);
+            if(usuario!=null){
+                intent.putExtra("login", true);
+                /*sesion.setusername(usuario.getCorreo());
+                Home home = new Home();
+                home.setSesion(sesion);*/
+                Log.i("Id", usuario.getId().toString());
+                session.createUserLoginSession("Login",
+                        usuario.getCorreo(), usuario.getId().toString());
+            }
+            else{
+                intent.putExtra("login", false);
+            }
+            startActivity(intent);
         }
 
     }
