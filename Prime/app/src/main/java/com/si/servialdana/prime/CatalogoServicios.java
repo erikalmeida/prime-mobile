@@ -77,7 +77,7 @@ public class CatalogoServicios extends AppCompatActivity {
         prepareAlbums();
 
         try {
-            Glide.with(this).load(R.drawable.cover).into((ImageView) findViewById(R.id.backdrop));
+            Glide.with(this).load(R.drawable.carrito).into((ImageView) findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -126,11 +126,11 @@ public class CatalogoServicios extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
+                R.drawable.serviciocambioaceite,
+                R.drawable.serviciocambiopastillas,
+                R.drawable.serviciofrenos,
                 R.drawable.service1,
                 R.drawable.service2,
-                R.drawable.album3,
-                R.drawable.album4,
-                R.drawable.album5,
                 R.drawable.album6,
                 R.drawable.album7,
                 R.drawable.album8,
@@ -138,34 +138,34 @@ public class CatalogoServicios extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        Servicio a = new Servicio(1,"Cambio de Aceite", covers[0]);
+        Servicio a = new Servicio(1,"Cambio de Aceite", covers[0], "");
         servicioList.add(a);
 
-        a = new Servicio(2,"Correa del Tiempo", covers[1]);
+        a = new Servicio(2,"Cambio de pastillas", covers[1], "");
         servicioList.add(a);
 
-        a = new Servicio(3,"Mantenimiento", covers[2]);
+        a = new Servicio(3,"Frenos", covers[2], "");
         servicioList.add(a);
 
-        a = new Servicio(4,"Polea", covers[3]);
+        a = new Servicio(4,"Polea", covers[3], "");
         servicioList.add(a);
 
-        a = new Servicio(5,"Servicio 1", covers[4]);
+        a = new Servicio(5,"Servicio 1", covers[4], "");
         servicioList.add(a);
 
-        a = new Servicio(6,"Servicio 2", covers[5]);
+        a = new Servicio(6,"Servicio 2", covers[5], "");
         servicioList.add(a);
 
-        a = new Servicio(7,"Servicio 3", covers[6]);
+        a = new Servicio(7,"Servicio 3", covers[6], "");
         servicioList.add(a);
 
-        a = new Servicio(8,"Servicio 4", covers[7]);
+        a = new Servicio(8,"Servicio 4", covers[7], "");
         servicioList.add(a);
 
-        a = new Servicio(9,"Servicio 5", covers[8]);
+        a = new Servicio(9,"Servicio 5", covers[8], "");
         servicioList.add(a);
 
-        a = new Servicio(10,"Servicio 6", covers[9]);
+        a = new Servicio(10,"Servicio 6", covers[9], "");
         servicioList.add(a);
 
         adapter.notifyDataSetChanged();
@@ -175,11 +175,16 @@ public class CatalogoServicios extends AppCompatActivity {
         dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
         this.dao_servicios= dbHelper.getRuntimeExceptionServicioDao();
         Servicio servi;
-        servi = this.getServicioList().get(1);
-        dao_servicios.create(servi);
+
+        for (int i=0; i<servicioList.size(); i++){
+
+            servi = this.getServicioList().get(i);
+            dao_servicios.create(servi);
+        }
+
     }
 
-    public List<Servicio> consultarPromociones(){
+    public List<Servicio> consultarServicios(){
         dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
         this.dao_servicios= dbHelper.getRuntimeExceptionServicioDao();
         this.servicioList= dao_servicios.queryForAll();
@@ -256,7 +261,7 @@ public class CatalogoServicios extends AppCompatActivity {
                 HttpStatus statusCode = responseEntity.getStatusCode();*/
                 return servicios;
             } catch (Exception e) {
-                Log.e("ServicioPromocion", e.getMessage(), e);
+                Log.e("ServicioServicios", e.getMessage(), e);
             }
 
             return null;

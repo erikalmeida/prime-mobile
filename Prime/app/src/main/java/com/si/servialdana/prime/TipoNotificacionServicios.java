@@ -42,10 +42,21 @@ public class TipoNotificacionServicios extends AppCompatActivity{
         dbHelper = (DBHelper) OpenHelperManager.getHelper(mcontext, DBHelper.class);
         this.dao_tiponotificacion= dbHelper.getRuntimeExceptionTipoNotificacionDao();
         TipoNotificacion tipoNotificacion;
-        tipoNotificacion = this.getNotificacionList().get(1);
-        dao_tiponotificacion.create(tipoNotificacion);
-    }
 
+
+        for (int i=0; i<notificacionList.size(); i++){
+
+            tipoNotificacion = this.getNotificacionList().get(i);
+            dao_tiponotificacion.create(tipoNotificacion);
+        }
+
+    }
+    public List<TipoNotificacion> consultarTipoNotificacion(){
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
+        this.dao_tiponotificacion= dbHelper.getRuntimeExceptionTipoNotificacionDao();
+        this.notificacionList= dao_tiponotificacion.queryForAll();
+        return this.notificacionList;
+    }
     private class HttpRequestTask extends AsyncTask<Void, Void, TipoNotificacion[]> {
 
         TipoNotificacionServicios tns;

@@ -27,6 +27,7 @@ import com.si.servialdana.prime.sql.modelo.Sistema;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.si.servialdana.prime.sql.conexion.DBHelper;
+import com.si.servialdana.prime.utils.Constantes;
 
 public class QuienesSomos extends AppCompatActivity {
 
@@ -76,14 +77,6 @@ public class QuienesSomos extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
     }
 
@@ -184,7 +177,7 @@ public class QuienesSomos extends AppCompatActivity {
         protected Sistema doInBackground(Void... params) {
             try {
                 Sistema sistema = new Sistema();
-                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
+                final String url = "http://"+ Constantes.IP+":"+ Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 sistema = restTemplate.getForObject(url, Sistema.class);
