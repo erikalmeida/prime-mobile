@@ -16,82 +16,60 @@
     android:weightSum="1">
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/servialdanalogo256"
-        android:id="@+id/imageView2"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp" />
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="20dp">
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
         android:background="@color/cardView"
-        android:layout_height="wrap_content">
-
-
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
 
 
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="250dp"
-            app:srcCompat="@drawable/ic_promocion2"
-            android:clickable="true"
+            android:layout_width="199dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
-            android:id="@+id/cover_promociones" />
+            app:srcCompat="@drawable/ic_home_promo"
+            android:id="@+id/imageView2" />
+
         <Button
             android:text="PROMOCIONES"
-            android:background="@drawable/boton_tipo_uno"
-            android:layout_height="57dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btnPromociones"
-            android:textColor="@color/icons"
-            android:layout_width="match_parent"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        </LinearLayout>
-
+            android:background="@drawable/boton_tipo_uno"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@color/icons"/>
+    </LinearLayout>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/divider"
         android:layout_weight="0.5"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginTop="10dp">
 
 
-                <ImageView
-                    android:id="@+id/cover_servicios"
-                    android:layout_height="250dp"
-                    android:src="@drawable/ic_servicio2"
-                    android:background="@color/cardView"
-                    android:layout_width="match_parent" />
         <Button
             android:text="SERVICIOS"
-            android:background="@drawable/boton_tipo_uno"
+            android:layout_width="wrap_content"
+            android:background="@drawable/boton_tipo_dos"
             android:layout_height="wrap_content"
             android:id="@+id/btnServicios"
-            android:elevation="2dp"
-            android:textColor="@color/icons"
-            android:layout_width="match_parent"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@color/icons"/>
 
+        <ImageView
+            android:layout_width="199dp"
+            android:layout_gravity="center"
+            android:layout_height="180dp"
+            app:srcCompat="@drawable/ic_home_serv"
+            android:id="@+id/imageView12" />
     </LinearLayout>
-</LinearLayout>
+
 </LinearLayout>

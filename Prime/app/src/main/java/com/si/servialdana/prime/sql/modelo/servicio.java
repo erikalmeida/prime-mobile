@@ -15,13 +15,17 @@ public class Servicio {
     @DatabaseField
     private int thumbnail;
 
+    @DatabaseField
+    private String urlImagen;
+
     public Servicio() {
     }
 
-    public Servicio(int id, String name, int thumbnail) {
+    public Servicio(int id, String name, int thumbnail, String urlImagen) {
         this.id = id;
         this.name = name;
         this.thumbnail = thumbnail;
+        this.urlImagen = urlImagen;
     }
 
     public int getId() {
@@ -40,6 +44,9 @@ public class Servicio {
         this.name = name;
     }
 
+    public String getUrlImagen() {return urlImagen;}
+
+    public void setUrlImagen(String urlImagen) {this.urlImagen = urlImagen;}
 
     public int getThumbnail() {
         return thumbnail;

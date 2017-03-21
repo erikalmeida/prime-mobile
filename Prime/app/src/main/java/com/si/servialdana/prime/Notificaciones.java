@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import com.si.servialdana.prime.adaptador.RecyclerViewAdapterNotificaciones;
 import com.si.servialdana.prime.sql.modelo.Notificacion;
+import com.si.servialdana.prime.utils.Constantes;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -74,7 +75,7 @@ public class Notificaciones extends AppCompatActivity {
                 session = new UserSessionManager(getApplicationContext());
                 user = session.getUserDetails();
                 String id = user.get(UserSessionManager.KEY_ID);
-                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=notificaciones"; //"https://bitpay.com/api/rates"
+                final String url = "http://"+ Constantes.IP+":"+ Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=notificaciones"; //"https://bitpay.com/api/rates"
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 String urlParams = url + "&idusuario=" + id ;
@@ -95,7 +96,7 @@ public class Notificaciones extends AppCompatActivity {
         protected void onPostExecute(Notificacion[] notificaciones) {
             List<Notificacion> listaNotificaciones = Arrays.asList(notificaciones);
             Notificaciones n = new Notificaciones();
-            //n.setNotificacionList(listaNotificaciones);
+           // n.setNotificacionList(listaNotificaciones);
             recyclerView = (RecyclerView) findViewById(R.id.listaNotificaciones);
             RecyclerViewAdapterNotificaciones adaptador=new RecyclerViewAdapterNotificaciones(listaNotificaciones);
             manager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);

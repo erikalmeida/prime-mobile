@@ -1,164 +1,96 @@
 package com.si.servialdana.prime;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RatingBar;
 
-import android.widget.TextView;
+import com.si.servialdana.prime.sql.modelo.Calificacion;
+import com.si.servialdana.prime.utils.Constantes;
 
-public class CalificacionServicio extends AppCompatActivity {
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+import static com.si.servialdana.prime.R.id.ratingBar;
+import static com.si.servialdana.prime.R.id.ratingBarServicio;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
+public class CalificacionServicio extends AppCompatActivity implements View.OnClickListener{
+
+    Calificacion calificacion = new Calificacion();
+    private Button btnEnviarCalificacion;
+    RatingBar ratingBarServicio;
+    RatingBar ratingBarInstalacion;
+    RatingBar ratingBarAtencion;
+    EditText txtComentario;
+
+    public Calificacion getCalificacion() {return calificacion;}
+
+    public void setCalificacion(Calificacion calificacion) {this.calificacion = calificacion;}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calificacion_servicio);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_calificacion);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        btnEnviarCalificacion = (Button) findViewById(R.id.btnEnviarCalificacion);
+        ratingBarServicio = (RatingBar) findViewById(R.id.ratingBarServicio);
+        ratingBarInstalacion = (RatingBar) findViewById(R.id.ratingBarInstalaciones);
+        ratingBarAtencion = (RatingBar) findViewById(R.id.ratingBarAtencion);
+        txtComentario = (EditText) findViewById(R.id.editTextComentarioCalificacion);
+        btnEnviarCalificacion.setOnClickListener(this);
 
 
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_calificacion_servicio, menu);
-        return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onClick(View v) {
+        this.setCalificacion(new Calificacion());
+        switch (v.getId()) {
+            case R.id.btnEnviarCalificacion:
+                new ServicioEnviarCalificacion().execute();
+                break;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+    private class ServicioEnviarCalificacion extends AsyncTask<Void, Void, Calificacion> {
 
-        public PlaceholderFragment() {
-        }
+        Calificacion calificacion;
+        CalificacionServicio cs;
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
+        @Override
+        protected void onPreExecute() {
+            cs = new CalificacionServicio();
 
-     /*   @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_calificacion_servicio_1, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
-        }*/
-    }
+            RatingBar ratingbarservicio = (RatingBar) findViewById(R.id.ratingBarServicio);
+            RatingBar ratingbarinstalacion = (RatingBar) findViewById(R.id.ratingBarInstalaciones);
+            RatingBar ratingbaratencion = (RatingBar) findViewById(R.id.ratingBarAtencion);
+            EditText comentario = (EditText) findViewById(R.id.editTextComentarioCalificacion);
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
+            calificacion = new Calificacion(ratingbarservicio.getNumStars(), ratingbarinstalacion.getNumStars(), ratingbaratencion.getNumStars(), comentario.getText().toString());
         }
 
         @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    FragmentCalificacionServicio1 tab1 = new FragmentCalificacionServicio1();
-                    return tab1;
-                case 1:
-                    FragmentCalificacionServicio2 tab2 = new FragmentCalificacionServicio2();
-                    return tab2;
-                case 2:
-                    FragmentCalificacionServicio3 tab3 = new FragmentCalificacionServicio3();
-                    return tab3;
-            }
-            return PlaceholderFragment.newInstance(position + 1);
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Calificacion Servicio";
-                case 1:
-                    return "Calificacion Instalaciones";
-                case 2:
-                    return "Calificacion Atencion";
+        protected Calificacion doInBackground(Void... params) {
+            try {
+                final String url = "https://"+ Constantes.IP+"/"+Constantes.PUERTO_SERVICIO+"prime/ControladorPeticion?solicitud=presupuesto";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                String urlParams = url + "&calificacionServicio=" + calificacion.getCalificacionServicio() +
+                                         "&calificacionInstalacion=" +calificacion.getCalificacionInstalacion()+
+                                         "&calificacionAtencion="+calificacion.getCalificacionAtencion()+
+                                         "&comentario="+calificacion.getComentario();
+                calificacion = restTemplate.postForObject(urlParams,this.calificacion, Calificacion.class);
+                return calificacion;
+            } catch (Exception e) {
+                Log.e("CalificacionServicio", e.getMessage(), e);
             }
             return null;
         }
     }
+
 }

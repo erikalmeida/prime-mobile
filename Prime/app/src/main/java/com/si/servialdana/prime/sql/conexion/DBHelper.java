@@ -9,6 +9,7 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.si.servialdana.prime.sql.modelo.Grupo;
+import com.si.servialdana.prime.sql.modelo.TipoNotificacion;
 import com.si.servialdana.prime.sql.modelo.Usuario;
 import com.si.servialdana.prime.sql.modelo.Sistema;
 import com.si.servialdana.prime.sql.modelo.Promocion;
@@ -29,6 +30,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     private RuntimeExceptionDao<Sistema, Integer> sistemaIntegerDao = null;
     private RuntimeExceptionDao<Promocion, Integer> promocionIntegerDao = null;
     private RuntimeExceptionDao<Servicio, Integer> servicioIntegerDao=null;
+    private RuntimeExceptionDao<TipoNotificacion, Integer> tipoNotificacionIntegerDao=null;
 
 
     public DBHelper(Context context) {
@@ -43,6 +45,8 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, Sistema.class);
             TableUtils.createTable(connectionSource, Promocion.class);
             TableUtils.createTable(connectionSource, Servicio.class);
+            TableUtils.createTable(connectionSource, TipoNotificacion.class);
+
         } catch (SQLException e) {
             throw new RuntimeException("Ha ocurrido un error en la creacion de la base de datos");
         }
@@ -87,6 +91,13 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             servicioIntegerDao = getRuntimeExceptionDao(Servicio.class);
         }
         return this.servicioIntegerDao;
+    }
+
+    public RuntimeExceptionDao<TipoNotificacion, Integer> getRuntimeExceptionTipoNotificacionDao(){
+        if(tipoNotificacionIntegerDao==null){
+            tipoNotificacionIntegerDao = getRuntimeExceptionDao(TipoNotificacion.class);
+        }
+        return this.tipoNotificacionIntegerDao;
     }
 
     public DBHelper getHelper(Context context){

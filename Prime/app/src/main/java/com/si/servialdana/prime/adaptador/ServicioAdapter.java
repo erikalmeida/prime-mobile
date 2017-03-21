@@ -77,7 +77,7 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.MyView
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Servicio Servicio = servicioList.get(position);
         holder.title.setText(Servicio.getName());
-        //holder.count.setText(Servicio.getNumOfSongs() + " Días");
+
 
         // loading album cover using Glide library
         Glide.with(mContext).load(Servicio.getThumbnail()).into(holder.thumbnail);

@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.si.servialdana.prime.R;
+import com.si.servialdana.prime.TipoNotificacionServicios;
 import com.si.servialdana.prime.sql.modelo.Notificacion;
+import com.si.servialdana.prime.sql.modelo.TipoNotificacion;
 
 import java.util.List;
 
@@ -16,7 +18,11 @@ public class RecyclerViewAdapterNotificaciones extends RecyclerView.Adapter<View
     private List<Notificacion> notificacionList;
     private int posicion;
 
-    public RecyclerViewAdapterNotificaciones(List<Notificacion> notificacionList){
+    /*public RecyclerViewAdapterNotificaciones(List<Notificacion> listaNotificaciones) {
+
+    }*/
+
+    public RecyclerViewAdapterNotificaciones(List<Notificacion> notificacionList) {
         this.notificacionList = notificacionList;
     }
 
@@ -32,6 +38,7 @@ public class RecyclerViewAdapterNotificaciones extends RecyclerView.Adapter<View
     @Override
     public void onBindViewHolder(ViewHolderNotificaciones holder, int position) {
         posicion=position;
+
         Notificacion noti =notificacionList.get(posicion);
         holder.titulo.setText(noti.getNombre());
         holder.descripcion.setText(noti.getDescripcion());

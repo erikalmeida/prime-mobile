@@ -26,10 +26,10 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BuzonSugerencias extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class BuzonSugerencias extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
 
-    private Button btnEnviar;
+    private Button btnEnviarSugerencia;
     //declare spinners
     Spinner spinnerTipo;
     Spinner spinnerMotivo;
@@ -37,9 +37,12 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buzon_sugerencias);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_buzon_sugerencias);
 
+
+        btnEnviarSugerencia = (Button) findViewById(R.id.btnEnviarSugerencia);
+        btnEnviarSugerencia.setOnClickListener(this);
         // Spinner element
         spinnerTipo = (Spinner) findViewById(R.id.spinnerTipo);
         spinnerMotivo = (Spinner) findViewById(R.id.spinnerMotivo);
@@ -74,8 +77,17 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
         spinnerTipo.setOnItemSelectedListener(this);
         spinnerMotivo.setOnItemSelectedListener(this);
 
-        btnEnviar = (Button) findViewById(R.id.buttonEnviarSugerencia);
-        //btnEnviar.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        BuzonServicio ls = new BuzonServicio();
+        switch (v.getId()) {
+            case R.id.btnEnviarSugerencia:
+                new BuzonServicio().execute();
+                break;
+        }
     }
 
     @Override
@@ -108,8 +120,10 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onStart() {
         super.onStart();
-        new BuzonServicio().execute();
+        //new BuzonServicio().execute();
     }
+
+
 
 
     private class BuzonServicio extends AsyncTask<Void, Void, Comentario> {
@@ -118,18 +132,24 @@ public class BuzonSugerencias extends AppCompatActivity implements AdapterView.O
 
         @Override
         protected void onPreExecute() {
+            /*Spinner motivo = (Spinner) findViewById(R.id.spinnerMotivo);
+            Spinner tipo = (Spinner) findViewById(R.id.spinnerTipo);
+            EditText coment = (EditText) findViewById(R.id.editTextComentario);
 
+
+
+            comentario = new Comentario();*/ //traer tabla tipocomentario y motivo para los IDs.
         }
 
         @Override
         protected Comentario doInBackground(Void... params) {
             try {
-                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=buzon";
-                RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                String urlParams = url + "&nombre=" + "" + "&idTipoComentario=" + "1" + "&idMotivoComentario=" + "2" + "&comentario=" + "Este es un comentario";
-                comentario = restTemplate.postForObject(urlParams,this.comentario, Comentario.class);
-
+                //final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=buzon";
+                //RestTemplate restTemplate = new RestTemplate();
+                //restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                //String urlParams = url + "&nombre=" + "" + "&idTipoComentario=" + "1" + "&idMotivoComentario=" + "2" + "&comentario=" + "Este es un comentario";
+                //comentario = restTemplate.postForObject(urlParams,this.comentario, Comentario.class);
+                System.out.print(comentario);
                 return comentario;
             } catch (Exception e) {
                 Log.e("Login", e.getMessage(), e);

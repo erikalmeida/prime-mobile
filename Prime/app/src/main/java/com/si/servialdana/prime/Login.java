@@ -16,6 +16,7 @@ import android.app.ProgressDialog;
 import android.util.Base64;
 import android.util.Base64.*;
 import com.si.servialdana.prime.sql.modelo.Usuario;
+import com.si.servialdana.prime.utils.Constantes;
 //import com.si.servialdana.prime.sql.modelo.Session;
 
 import org.springframework.http.HttpEntity;
@@ -87,7 +88,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         @Override
         protected Usuario doInBackground(Void... params) {
             try {
-                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=login";
+                final String url = "http://"+ Constantes.IP+":"+ Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=login";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 String urlParams = url + "&correo=" + usuario.getCorreo();

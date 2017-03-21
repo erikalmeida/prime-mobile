@@ -21,6 +21,9 @@ public class TipoNotificacion {
         this.descripcion = descripcion;
         this.icono = icono;
     }
+    public TipoNotificacion(){
+
+    }
 
     public int getId() {return id;}
 
