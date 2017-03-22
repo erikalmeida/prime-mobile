@@ -1,5 +1,7 @@
 package com.si.servialdana.prime;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 
+import com.fasterxml.jackson.databind.deser.DataFormatReaders;
 import com.si.servialdana.prime.sql.modelo.Calificacion;
 import com.si.servialdana.prime.utils.Constantes;
 
@@ -25,11 +28,6 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
     RatingBar ratingBarAtencion;
     EditText txtComentario;
     int idordenentrega;
-
-
-
-
-
 
     public Calificacion getCalificacion() {return calificacion;}
 
@@ -48,8 +46,6 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
         btnEnviarCalificacion.setOnClickListener(this);
         Intent intent= getIntent();
         idordenentrega= intent.getIntExtra("idordenentrega",1);
-
-
     }
 
     @Override
@@ -61,9 +57,10 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
                 break;
 
         }
+        finish();
     }
 
-    private class ServicioEnviarCalificacion extends AsyncTask<Void, Void, Calificacion> {
+    private class ServicioEnviarCalificacion extends AsyncTask<String, Void, Calificacion> {
 
         Calificacion calificacion;
         CalificacionServicio cs;
@@ -76,21 +73,24 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
             RatingBar ratingbarinstalacion = (RatingBar) findViewById(R.id.ratingBarInstalaciones);
             RatingBar ratingbaratencion = (RatingBar) findViewById(R.id.ratingBarAtencion);
             EditText comentario = (EditText) findViewById(R.id.editTextComentarioCalificacion);
-
-            calificacion = new Calificacion(ratingbarservicio.getNumStars(), ratingbarinstalacion.getNumStars(), ratingbaratencion.getNumStars(), comentario.getText().toString());
+            int a = Math.round(ratingbarservicio.getRating());
+            int b = Math.round(ratingbarinstalacion.getRating());
+            int c = Math.round(ratingbaratencion.getRating());
+            calificacion = new Calificacion(a, b, c, comentario.getText().toString(),idordenentrega);
         }
 
         @Override
-        protected Calificacion doInBackground(Void... params) {
+        protected Calificacion doInBackground(String... params) {
             try {
+                //String idordenentrega = params[0];
                 final String url = "http://"+ Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=calificacion";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 String urlParams = url + "&calificacionServicio=" + Integer.toString(calificacion.getCalificacionServicio()) +
-                                         "&calificacionInstalacion=" +Integer.toString(calificacion.getCalificacionInstalacion())+
-                                         "&calificacionAtencion="+Integer.toString(calificacion.getCalificacionAtencion())+
-                                         "&comentario="+calificacion.getComentario()+
-                                         "&idordenentrega="+"1";
+                        "&calificacionInstalacion=" +Integer.toString(calificacion.getCalificacionInstalacion())+
+                        "&calificacionAtencion="+Integer.toString(calificacion.getCalificacionAtencion())+
+                        "&comentario="+calificacion.getComentario()+
+                        "&idordenentrega="+ "1";//Long.toString(idordenentrega);
                 //System.out.print(urlParams+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                 calificacion = restTemplate.postForObject(urlParams,this.calificacion, Calificacion.class);
                 return calificacion;

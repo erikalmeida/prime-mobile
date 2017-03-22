@@ -130,13 +130,7 @@ public class CatalogoServicios extends AppCompatActivity {
                 R.drawable.serviciocambiopastillas,
                 R.drawable.serviciofrenos,
                 R.drawable.service1,
-                R.drawable.service2,
-                R.drawable.album6,
-                R.drawable.album7,
-                R.drawable.album8,
-                R.drawable.album9,
-                R.drawable.album10,
-                R.drawable.album11};
+                R.drawable.service2,};
 
         Servicio a = new Servicio(1,"Cambio de Aceite", covers[0], "");
         servicioList.add(a);
@@ -150,23 +144,6 @@ public class CatalogoServicios extends AppCompatActivity {
         a = new Servicio(4,"Polea", covers[3], "");
         servicioList.add(a);
 
-        a = new Servicio(5,"Servicio 1", covers[4], "");
-        servicioList.add(a);
-
-        a = new Servicio(6,"Servicio 2", covers[5], "");
-        servicioList.add(a);
-
-        a = new Servicio(7,"Servicio 3", covers[6], "");
-        servicioList.add(a);
-
-        a = new Servicio(8,"Servicio 4", covers[7], "");
-        servicioList.add(a);
-
-        a = new Servicio(9,"Servicio 5", covers[8], "");
-        servicioList.add(a);
-
-        a = new Servicio(10,"Servicio 6", covers[9], "");
-        servicioList.add(a);
 
         adapter.notifyDataSetChanged();
     }

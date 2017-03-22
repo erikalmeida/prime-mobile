@@ -136,47 +136,25 @@ public class CatalogoPromociones extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.album1,
-                R.drawable.album2,
-                R.drawable.album3,
-                R.drawable.album4,
-                R.drawable.album5,
-                R.drawable.album6,
-                R.drawable.album7,
-                R.drawable.album8,
-                R.drawable.album9,
-                R.drawable.album10,
-                R.drawable.album11};
+                R.drawable.service2,
+                R.drawable.service1,
+                R.drawable.serviciofrenos,
+                R.drawable.serviciocambiopastillas,
+                R.drawable.serviciocambioaceite};
 
-        Promocion a = new Promocion(1,"True Romance", covers[0]);
+        Promocion a = new Promocion(1,"2x1 alineacion", covers[0]);
         promocionList.add(a);
 
-        a = new Promocion(2,"Xscpae", covers[1]);
+        a = new Promocion(2,"50% cambio aceite", covers[1]);
         promocionList.add(a);
 
-        a = new Promocion(3,"Maroon 5", covers[2]);
+        a = new Promocion(3," frenos dia del padre", covers[2]);
         promocionList.add(a);
 
         a = new Promocion(4,"Born to Die", covers[3]);
         promocionList.add(a);
 
-        a = new Promocion(5,"Honeymoon", covers[4]);
-        promocionList.add(a);
 
-        a = new Promocion(6,"I Need a Doctor", covers[5]);
-        promocionList.add(a);
-
-        a = new Promocion(7,"Loud", covers[6]);
-        promocionList.add(a);
-
-        a = new Promocion(8,"Legend", covers[7]);
-        promocionList.add(a);
-
-        a = new Promocion(9,"Hello", covers[8]);
-        promocionList.add(a);
-
-        a = new Promocion(10,"Greatest Hits", covers[9]);
-        promocionList.add(a);
 
         adapter.notifyDataSetChanged();
     }
