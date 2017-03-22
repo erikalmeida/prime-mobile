@@ -2,10 +2,14 @@ package com.si.servialdana.prime;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -23,6 +27,8 @@ import org.springframework.web.client.RestTemplate;
 import android.util.Log;
 
 import android.widget.TextView;
+
+import com.si.servialdana.prime.adaptador.RecyclerViewAdapterNotificaciones;
 import com.si.servialdana.prime.sql.modelo.Sistema;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
@@ -77,6 +83,19 @@ public class QuienesSomos extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        dbHelper = (DBHelper) OpenHelperManager.getHelper(this, DBHelper.class);
+        this.dao_sistema= dbHelper.getRuntimeExceptionSistemaDao();
+
+        /*if(!this.isNetworkAvailable()){
+            this.sistema=this.dao_sistema.queryForId(0);
+            TextView idTextUbicanos = (TextView) findViewById(R.id.textViewUbicanosDireccion);
+            TextView idTextCelular = (TextView) findViewById(R.id.textViewCelular);
+            TextView idTextCorreo = (TextView) findViewById(R.id.textViewCorreoEmpresa);
+            idTextUbicanos.setText(sistema.getDireccion());
+            idTextCelular.setText(sistema.getCelular());
+            idTextCorreo.setText(sistema.getCorreo());
+        }
+*/
 
     }
 
@@ -168,6 +187,16 @@ public class QuienesSomos extends AppCompatActivity {
         //dao_sistema.createIfNotExists(this.getSistema());
         dao_sistema.createIfNotExists(this.getSistema());
     }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+
+
 
     private class HttpRequestTask extends AsyncTask<Void, Void, Sistema> {
 

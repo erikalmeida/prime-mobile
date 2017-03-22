@@ -1,6 +1,7 @@
 package com.si.servialdana.prime.adaptador;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.CardView;
@@ -68,13 +69,14 @@ public class ViewHolderNotificaciones extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), metodoonclick());
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                Bundle extras = new Bundle();
+                extras.putInt("idpromocion", idpromocion);
 
-                intent.putExtra("idpromocion", getIdpromocion());
-                intent.putExtra("idpresupuesto", getIdpresupuesto());
-                intent.putExtra("idordenentrega", getIdordenentrega());
-                intent.putExtra("ideventualidad", getIdeventualidad());
-
-
+                extras.putInt("idordenentrega", idordenentrega);
+                extras.putInt("ideventualidad", ideventualidad);
+                extras.putInt("idpresupuesto", idpresupuesto);
+                intent.putExtras(extras);
                 v.getContext().startActivity(intent);
             }
         });
@@ -82,10 +84,13 @@ public class ViewHolderNotificaciones extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), metodoonclick());
-                intent.putExtra("idpromocion", getIdpromocion());
-                intent.putExtra("idpresupuesto", getIdpresupuesto());
-                intent.putExtra("idordenentrega", getIdordenentrega());
-                intent.putExtra("ideventualidad", getIdeventualidad());
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Bundle extras = new Bundle();
+                extras.putInt("idpromocion", idpromocion);
+                extras.putInt("idordenentrega", idordenentrega);
+                extras.putInt("ideventualidad", ideventualidad);
+                extras.putInt("idpresupuesto", idpresupuesto);
+                intent.putExtras(extras);
                 v.getContext().startActivity(intent);
             }
         });
@@ -94,10 +99,13 @@ public class ViewHolderNotificaciones extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 Intent intent;
                 intent = new Intent(v.getContext(), metodoonclick());
-                intent.putExtra("idpromocion", getIdpromocion());
-                intent.putExtra("idpresupuesto", getIdpresupuesto());
-                intent.putExtra("idordenentrega", getIdordenentrega());
-                intent.putExtra("ideventualidad", getIdeventualidad());
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Bundle extras = new Bundle();
+                extras.putInt("idpromocion", idpromocion);
+                extras.putInt("idordenentrega", idordenentrega);
+                extras.putInt("ideventualidad", ideventualidad);
+                extras.putInt("idpresupuesto", idpresupuesto);
+                intent.putExtras(extras);
                 v.getContext().startActivity(intent);
             }
         });

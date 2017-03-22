@@ -27,7 +27,7 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
     private Presupuesto presupuesto;
     private Button btnAceptar;
     private Button btnRechazar;
-    private int idpresuppuesto;
+    private int idpresupuesto;
 
     public Presupuesto getPresupuesto() {
         return presupuesto;
@@ -43,13 +43,14 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_detalle_presupuesto);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
-        idpresuppuesto = intent.getIntExtra("idpresupuesto", 0);
+        Bundle extras = intent.getExtras();
+        idpresupuesto = extras.getInt("idpresupuesto");
         btnAceptar = (Button) findViewById(R.id.btnAceptar);
         btnRechazar = (Button) findViewById(R.id.btnRechazar);
         btnAceptar.setOnClickListener(this);
         btnRechazar.setOnClickListener(this);
+        //new ServicioNotificacionPresupuesto().execute(Integer.toString(idpresuppuesto));
         //new ServicioNotificacionPresupuesto().execute();
-
     }
 
 
@@ -65,16 +66,21 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
                 break;
         }
 
+        finish();
+
+       /* Intent myIntent2 = new Intent(getApplicationContext(), DetallePresupuesto.class);
+        v.getContext().finish(myIntent2);*/
     }
 
-    public class ServicioNotificacionPresupuesto extends AsyncTask<Void, Void, Presupuesto> {
+    public class ServicioNotificacionPresupuesto extends AsyncTask<String, Void, Presupuesto> {
 
 
         @Override
-        protected Presupuesto doInBackground(Void... params) {
+        protected Presupuesto doInBackground(String... params) {
             try {
                 //Presupuesto presupuesto = new Presupuesto();
-                String id = Integer.toString(idpresuppuesto);
+                //String id = params[0];
+                String id = Integer.toString(idpresupuesto);
                 final String url = "http://"+Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuestobuscar";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
@@ -98,7 +104,7 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
             TextView txtMontoTotal = (TextView) findViewById(R.id.textViewMontoTotal);
 
             //txtFecha.setText(reportDate);
-            txtMontoTotal.setText(Float.toString(presupuesto.getMonto_total()));
+//            txtMontoTotal.setText(Float.toString(presupuesto.getMonto_total()));
 
         }
     }
@@ -113,7 +119,7 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
                 final String url = "http://"+Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuesto";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                String urlParams = url + "&idpresupuesto=" +  Integer.toString(idpresuppuesto)+ "&estado=" + "Validada";
+                String urlParams = url + "&idpresupuesto=" +  Integer.toString(idpresupuesto)+ "&estado=" + "Validada";
                 presupuesto = restTemplate.postForObject(urlParams,this.presupuesto, Presupuesto.class);
                 return presupuesto;
             } catch (Exception e) {
@@ -133,7 +139,7 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
                 final String url = "http://"+Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuesto";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                String urlParams = url + "&idpresupuesto=" + Integer.toString(idpresuppuesto) + "&estado=" + "Rechazada";
+                String urlParams = url + "&idpresupuesto=" + Integer.toString(idpresupuesto) + "&estado=" + "Rechazada";
                 presupuesto = restTemplate.postForObject(urlParams,this.presupuesto, Presupuesto.class);
                 return presupuesto;
             } catch (Exception e) {

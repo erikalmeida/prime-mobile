@@ -18,6 +18,7 @@ import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.si.servialdana.prime.sql.conexion.DBHelper;
 
 import com.si.servialdana.prime.Fragment_quienes_somos_ubicanos;
+import com.si.servialdana.prime.utils.Constantes;
 
 public class SistemaServicio extends AppCompatActivity {
 
@@ -73,7 +74,7 @@ public class SistemaServicio extends AppCompatActivity {
         protected Sistema doInBackground(Void... params) {
             try {
                 Sistema sistema = new Sistema();
-                final String url = "http://192.168.1.113:8080/prime/ControladorPeticion?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
+                final String url = "http://"+ Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 sistema = restTemplate.getForObject(url, Sistema.class);

@@ -12,16 +12,18 @@ public class Calificacion {
     private int calificacionInstalacion;
     private int calificacionAtencion;
     private String comentario;
+    private int idordenentrega;
 
 
     public Calificacion() {
     }
 
-    public Calificacion(int calificacionServicio, int calificacionInstalacion, int calificacionAtencion, String comentario) {
+    public Calificacion(int calificacionServicio, int calificacionInstalacion, int calificacionAtencion, String comentario, int idordenentrega) {
         this.calificacionServicio = calificacionServicio;
         this.calificacionInstalacion = calificacionInstalacion;
         this.calificacionAtencion = calificacionAtencion;
         this.comentario = comentario;
+        this.idordenentrega = idordenentrega;
     }
 
    /* public long getId_calificacion() {
@@ -63,4 +65,14 @@ public class Calificacion {
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
+
+    public int getIdordenentrega() {
+        return idordenentrega;
+    }
+
+    public void setIdordenentrega(int idordenentrega) {
+        this.idordenentrega = idordenentrega;
+    }
 }
+
+

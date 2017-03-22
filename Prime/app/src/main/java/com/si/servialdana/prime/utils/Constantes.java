@@ -8,12 +8,6 @@ public class Constantes {
 
     public static final String IP = "192.168.1.131";
     public static final String PUERTO_SERVICIO = "8080";
+    public static final String TUNEL = "";
 
-    public static String getIP() {
-        return IP;
-    }
-
-    public static String getPuertoServicio() {
-        return PUERTO_SERVICIO;
-    }
 }

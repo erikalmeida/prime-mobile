@@ -14,7 +14,9 @@ import com.si.servialdana.prime.sql.modelo.Usuario;
 import com.si.servialdana.prime.sql.modelo.Sistema;
 import com.si.servialdana.prime.sql.modelo.Promocion;
 import com.si.servialdana.prime.sql.modelo.Servicio;
+import com.si.servialdana.prime.sql.modelo.Notificacion;
 
+import android.util.Log;
 import java.sql.SQLException;
 
 
@@ -31,10 +33,12 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
     private RuntimeExceptionDao<Promocion, Integer> promocionIntegerDao = null;
     private RuntimeExceptionDao<Servicio, Integer> servicioIntegerDao=null;
     private RuntimeExceptionDao<TipoNotificacion, Integer> tipoNotificacionIntegerDao=null;
+    private RuntimeExceptionDao<Notificacion, Integer> notificacionIntegerDao = null;
+
 
 
     public DBHelper(Context context) {
-         super(context, NOMBRE_BASE_DE_DATOS, null, VERSION_BASE_DE_DATOS);
+        super(context, NOMBRE_BASE_DE_DATOS, null, VERSION_BASE_DE_DATOS);
     }
 
     @Override
@@ -46,6 +50,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, Promocion.class);
             TableUtils.createTable(connectionSource, Servicio.class);
             TableUtils.createTable(connectionSource, TipoNotificacion.class);
+            TableUtils.createTable(connectionSource, Notificacion.class);
 
         } catch (SQLException e) {
             throw new RuntimeException("Ha ocurrido un error en la creacion de la base de datos");
@@ -54,7 +59,12 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
-        onCreate(database,connectionSource);
+        try {
+            TableUtils.dropTable(connectionSource, Notificacion.class, true);
+            onCreate(database,connectionSource);
+        } catch (SQLException e) {
+            Log.e("Error", e.getLocalizedMessage(), e);
+        }
     }
 
     public RuntimeExceptionDao<Grupo, Integer> getRuntimeExceptionRolDao() throws SQLException{
@@ -81,7 +91,7 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
 
     public RuntimeExceptionDao<Promocion, Integer> getRuntimeExceptionPromocionDao(){
         if(promocionIntegerDao==null){
-         promocionIntegerDao = getRuntimeExceptionDao(Promocion.class);
+            promocionIntegerDao = getRuntimeExceptionDao(Promocion.class);
         }
         return this.promocionIntegerDao;
     }
@@ -99,6 +109,14 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
         }
         return this.tipoNotificacionIntegerDao;
     }
+
+    public RuntimeExceptionDao<Notificacion, Integer> getRuntimeExceptionNotificacionDao(){
+        if(notificacionIntegerDao==null){
+            notificacionIntegerDao = getRuntimeExceptionDao(Notificacion.class);
+        }
+        return this.notificacionIntegerDao;
+    }
+
 
     public DBHelper getHelper(Context context){
         if(dbHelper==null){

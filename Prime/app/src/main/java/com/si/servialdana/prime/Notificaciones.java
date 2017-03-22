@@ -96,7 +96,7 @@ public class Notificaciones extends AppCompatActivity {
         protected void onPostExecute(Notificacion[] notificaciones) {
             List<Notificacion> listaNotificaciones = Arrays.asList(notificaciones);
             Notificaciones n = new Notificaciones();
-           // n.setNotificacionList(listaNotificaciones);
+            // n.setNotificacionList(listaNotificaciones);
             recyclerView = (RecyclerView) findViewById(R.id.listaNotificaciones);
             RecyclerViewAdapterNotificaciones adaptador=new RecyclerViewAdapterNotificaciones(listaNotificaciones);
             manager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);

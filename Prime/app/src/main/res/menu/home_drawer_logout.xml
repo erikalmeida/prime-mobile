@@ -13,7 +13,7 @@
         <menu>
             <item
                 android:id="@+id/nav_ingresar"
-                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:icon="@drawable/ic_vpn_key_black_24dp"
                 android:title="Ingresar" />
         </menu>
     </item>

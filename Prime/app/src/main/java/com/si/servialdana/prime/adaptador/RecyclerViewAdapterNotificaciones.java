@@ -39,6 +39,7 @@ public class RecyclerViewAdapterNotificaciones extends RecyclerView.Adapter<View
     public void onBindViewHolder(ViewHolderNotificaciones holder, int position) {
         posicion=position;
 
+
         Notificacion noti =notificacionList.get(posicion);
         holder.titulo.setText(noti.getNombre());
         holder.descripcion.setText(noti.getDescripcion());

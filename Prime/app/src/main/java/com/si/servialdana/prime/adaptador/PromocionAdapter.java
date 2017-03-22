@@ -4,6 +4,7 @@ package com.si.servialdana.prime.adaptador;
  * Created by ealmeida on 2/25/2017.
  */
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.si.servialdana.prime.DetallePromocion;
+import com.si.servialdana.prime.DetalleServicio;
 import com.si.servialdana.prime.R;
 import com.si.servialdana.prime.sql.modelo.Promocion;
 
@@ -31,8 +34,31 @@ public class PromocionAdapter extends RecyclerView.Adapter<PromocionAdapter.MyVi
 
         public MyViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.title);
-            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+
+                title = (TextView) view.findViewById(R.id.title);
+                thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+                view.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), DetallePromocion.class);
+                        v.getContext().startActivity(intent);
+                    }
+                });
+                thumbnail.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent intent = new Intent(v.getContext(), DetallePromocion.class);
+                        v.getContext().startActivity(intent);
+                    }
+                });
+                title.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent intent = new Intent(v.getContext(), DetallePromocion.class);
+                        v.getContext().startActivity(intent);
+                    }
+                });
+
         }
     }
 
