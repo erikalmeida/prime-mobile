@@ -15,7 +15,8 @@
             android:name=".Login"
             android:label="@string/title_activity_inicio_sesion"
             android:parentActivityName=".Home"></activity>
-        <activity android:name=".DetallePresupuesto">
+        <activity android:name=".DetallePresupuesto"
+            android:parentActivityName=".Notificaciones">
 
         </activity>
         <activity
@@ -23,19 +24,18 @@
             android:label="@string/title_activity_notificaciones"
             android:parentActivityName=".Home">
 
+
+
+        </activity>
+        <activity
+            android:name=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-        <activity
-            android:name=".Home"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
 
         </activity>
         <activity android:name=".Principal" />
@@ -80,7 +80,8 @@
         <activity
             android:name=".DetalleNotificacion"
             android:exported="true"
-            android:label="Notificaciones">
+            android:label="Notificaciones"
+            android:parentActivityName=".Notificaciones">
 
 
         </activity>

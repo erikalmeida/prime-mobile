@@ -1,5 +1,7 @@
 package com.si.servialdana.prime.sql.modelo;
 
+import java.util.Date;
+
 /**
  * Created by ealmeida on 2/27/2017.
  */
@@ -7,8 +9,16 @@ package com.si.servialdana.prime.sql.modelo;
 public class Presupuesto {
     private long id_presupuesto;
     private float monto_total;
+    private Date fecha_creacion;
     private String estado;
 
+    public Date getFecha_creacion() {
+        return fecha_creacion;
+    }
+
+    public void setFecha_creacion(Date fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
+    }
 
     public Presupuesto(long id_presupuesto, float monto_total, String estado) {
         this.id_presupuesto = id_presupuesto;

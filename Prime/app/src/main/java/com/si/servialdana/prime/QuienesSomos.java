@@ -176,7 +176,7 @@ public class QuienesSomos extends AppCompatActivity {
         @Override
         protected Sistema doInBackground(Void... params) {
             try {
-                Sistema sistema = new Sistema();
+                //Sistema sistema = new Sistema();
                 final String url = "http://"+ Constantes.IP+":"+ Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=sistema"; //"https://d3f8c86f.ngrok.io/servicios_crm/ServicioMovilPrime?solicitud=sistema";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
