@@ -45,6 +45,11 @@ public class RecyclerViewAdapterNotificaciones extends RecyclerView.Adapter<View
         holder.fecha.setText(noti.getFechacreacion());
         holder.setTipo(noti.getIdtiponotificacion());
         int tipo = noti.getIdtiponotificacion();
+        holder.setIdordenentrega(noti.getIdordenentrega());
+        holder.setIdpresupuesto(noti.getIdpresupuesto());
+        holder.setIdpromocion(noti.getIdpromocion());
+        holder.setIdeventualidad(noti.getIdeventualidad());
+
 
         switch (tipo)
         {

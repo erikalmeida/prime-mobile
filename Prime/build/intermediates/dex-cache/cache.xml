@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="e7f3e65ecc1539c87dd0040cbafa6aded1679e00">
+        sha1="5ca40de81cf7e1cdcaa22eaca8bfb63527980a31">
         <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run_8d5c1858b8f9e729f4a50cb8bfe9cc9d69d823bb.jar" />
     </item>
     <item
@@ -421,7 +421,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="880ef80277bca8922d2c23caf247eeaf3addc1db">
+        sha1="57cd6f41c70899f16d6160585aa64516cf560faf">
         <dex dex="C:\Users\ealmeida\desarrollo\prime-movil\Prime\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_99c7f5602adc0738e975a4d276bf980b94996678.jar" />
     </item>
     <item

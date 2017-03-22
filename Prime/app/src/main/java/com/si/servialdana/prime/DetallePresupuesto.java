@@ -1,5 +1,8 @@
 package com.si.servialdana.prime;
 
+import android.content.Intent;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,18 +10,24 @@ import android.view.View;
 
 import android.os.AsyncTask;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.si.servialdana.prime.sql.modelo.Presupuesto;
+import com.si.servialdana.prime.sql.modelo.Sistema;
 import com.si.servialdana.prime.utils.Constantes;
 
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class DetallePresupuesto extends AppCompatActivity implements View.OnClickListener {
 
     private Presupuesto presupuesto;
     private Button btnAceptar;
     private Button btnRechazar;
+    private int idpresuppuesto;
 
     public Presupuesto getPresupuesto() {
         return presupuesto;
@@ -32,50 +41,99 @@ public class DetallePresupuesto extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_presupuesto);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Intent intent = getIntent();
+        idpresuppuesto = intent.getIntExtra("idpresupuesto", 0);
         btnAceptar = (Button) findViewById(R.id.btnAceptar);
         btnRechazar = (Button) findViewById(R.id.btnRechazar);
         btnAceptar.setOnClickListener(this);
         btnRechazar.setOnClickListener(this);
+        //new ServicioNotificacionPresupuesto().execute();
+
     }
 
 
     @Override
     public void onClick(View v) {
-        this.setPresupuesto(new Presupuesto());
+        Presupuesto presu = new Presupuesto();
         switch (v.getId()) {
             case R.id.btnAceptar:
-                this.presupuesto.setEstado("Validada");
                 new ServicioAceptarPresupuesto().execute();
                 break;
             case R.id.btnRechazar:
-                this.presupuesto.setEstado("Rechazada");
-                new ServicioAceptarPresupuesto().execute();
+                new ServicioRechazarPresupuesto().execute();
                 break;
         }
+
     }
 
-    /*private class ServicioNotificacionPresupuesto extends AsyncTask<Void, Void, Presupuesto> {
+    public class ServicioNotificacionPresupuesto extends AsyncTask<Void, Void, Presupuesto> {
 
-    }*/
-
-    private class ServicioAceptarPresupuesto extends AsyncTask<Void, Void, Presupuesto> {
-
-        Presupuesto presupuesto;
-        DetallePresupuesto dp;
-
-        @Override
-        protected void onPreExecute() {
-            dp = new DetallePresupuesto();
-            presupuesto = dp.getPresupuesto();
-        }
 
         @Override
         protected Presupuesto doInBackground(Void... params) {
             try {
-                final String url = "http://"+ Constantes.IP+":"+ Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuesto";
+                //Presupuesto presupuesto = new Presupuesto();
+                String id = Integer.toString(idpresuppuesto);
+                final String url = "http://"+Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuestobuscar";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                String urlParams = url + "&idpresupuesto=" + "21" + "&estado=" + "Validado";
+                String urlParams = url + "&idpresupuesto=" + id ;
+                presupuesto = restTemplate.getForObject(urlParams, Presupuesto.class);
+                Log.i("Correo:", Long.toString(presupuesto.getId_presupuesto()));
+                return presupuesto;
+            } catch (Exception e) {
+                Log.e("MainActivity", e.getMessage(), e);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Presupuesto presupuesto) {
+
+           /* DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+            Date hoy = presupuesto.getFecha_creacion();
+            String reportDate = df.format(hoy);*/
+            TextView txtFecha = (TextView) findViewById(R.id.textViewFechaPresupuesto);
+            TextView txtMontoTotal = (TextView) findViewById(R.id.textViewMontoTotal);
+
+            //txtFecha.setText(reportDate);
+            txtMontoTotal.setText(Float.toString(presupuesto.getMonto_total()));
+
+        }
+    }
+
+    public class ServicioAceptarPresupuesto extends AsyncTask<Void, Void, Presupuesto> {
+
+        Presupuesto presupuesto;
+
+        @Override
+        protected Presupuesto doInBackground(Void... params) {
+            try {
+                final String url = "http://"+Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuesto";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                String urlParams = url + "&idpresupuesto=" +  Integer.toString(idpresuppuesto)+ "&estado=" + "Validada";
+                presupuesto = restTemplate.postForObject(urlParams,this.presupuesto, Presupuesto.class);
+                return presupuesto;
+            } catch (Exception e) {
+                Log.e("DetallePresupuesto", e.getMessage(), e);
+            }
+            return null;
+        }
+    }
+
+    public class ServicioRechazarPresupuesto extends AsyncTask<Void, Void, Presupuesto> {
+
+        Presupuesto presupuesto;
+
+        @Override
+        protected Presupuesto doInBackground(Void... params) {
+            try {
+                final String url = "http://"+Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=presupuesto";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                String urlParams = url + "&idpresupuesto=" + Integer.toString(idpresuppuesto) + "&estado=" + "Rechazada";
                 presupuesto = restTemplate.postForObject(urlParams,this.presupuesto, Presupuesto.class);
                 return presupuesto;
             } catch (Exception e) {

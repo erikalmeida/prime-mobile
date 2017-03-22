@@ -1,5 +1,6 @@
 package com.si.servialdana.prime;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,9 +16,6 @@ import com.si.servialdana.prime.utils.Constantes;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import static com.si.servialdana.prime.R.id.ratingBar;
-import static com.si.servialdana.prime.R.id.ratingBarServicio;
-
 public class CalificacionServicio extends AppCompatActivity implements View.OnClickListener{
 
     Calificacion calificacion = new Calificacion();
@@ -26,6 +24,12 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
     RatingBar ratingBarInstalacion;
     RatingBar ratingBarAtencion;
     EditText txtComentario;
+    int idordenentrega;
+
+
+
+
+
 
     public Calificacion getCalificacion() {return calificacion;}
 
@@ -42,6 +46,8 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
         ratingBarAtencion = (RatingBar) findViewById(R.id.ratingBarAtencion);
         txtComentario = (EditText) findViewById(R.id.editTextComentarioCalificacion);
         btnEnviarCalificacion.setOnClickListener(this);
+        Intent intent= getIntent();
+        idordenentrega= intent.getIntExtra("idordenentrega",1);
 
 
     }
@@ -77,13 +83,15 @@ public class CalificacionServicio extends AppCompatActivity implements View.OnCl
         @Override
         protected Calificacion doInBackground(Void... params) {
             try {
-                final String url = "https://"+ Constantes.IP+"/"+Constantes.PUERTO_SERVICIO+"prime/ControladorPeticion?solicitud=presupuesto";
+                final String url = "http://"+ Constantes.IP+":"+Constantes.PUERTO_SERVICIO+"/prime/ControladorPeticion?solicitud=calificacion";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                String urlParams = url + "&calificacionServicio=" + calificacion.getCalificacionServicio() +
-                                         "&calificacionInstalacion=" +calificacion.getCalificacionInstalacion()+
-                                         "&calificacionAtencion="+calificacion.getCalificacionAtencion()+
-                                         "&comentario="+calificacion.getComentario();
+                String urlParams = url + "&calificacionServicio=" + Integer.toString(calificacion.getCalificacionServicio()) +
+                                         "&calificacionInstalacion=" +Integer.toString(calificacion.getCalificacionInstalacion())+
+                                         "&calificacionAtencion="+Integer.toString(calificacion.getCalificacionAtencion())+
+                                         "&comentario="+calificacion.getComentario()+
+                                         "&idordenentrega="+"1";
+                //System.out.print(urlParams+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                 calificacion = restTemplate.postForObject(urlParams,this.calificacion, Calificacion.class);
                 return calificacion;
             } catch (Exception e) {

@@ -7,7 +7,7 @@ import com.j256.ormlite.table.DatabaseTable;
  */
 
 public class Calificacion {
-    private long id_calificacion;
+    //private long id_calificacion;
     private int calificacionServicio;
     private int calificacionInstalacion;
     private int calificacionAtencion;
@@ -24,13 +24,13 @@ public class Calificacion {
         this.comentario = comentario;
     }
 
-    public long getId_calificacion() {
+   /* public long getId_calificacion() {
         return id_calificacion;
     }
 
     public void setId_calificacion(long id_calificacion) {
         this.id_calificacion = id_calificacion;
-    }
+    }*/
 
     public int getCalificacionServicio() {
         return calificacionServicio;

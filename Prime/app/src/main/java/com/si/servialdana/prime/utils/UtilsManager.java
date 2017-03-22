@@ -17,6 +17,7 @@ import java.io.InputStream;
 public class UtilsManager {
 
 
+
     public String urlImagen(String imagen){
         return new StringBuilder().append("http://").append(Constantes.IP).append(":").append(Constantes.PUERTO_SERVICIO).append("/").append(imagen).toString().replace(" ","");
     }
